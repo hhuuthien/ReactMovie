@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar-main {
+  background-color: #032541;
+  width: 100%;
+  height: 60px;
+  padding: 0 50px;
+}
+
+.navbar-main ul {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  list-style-type: none;
+}
+
+.navbar-main ul li {
+  margin: 0 30px;
+}
+
+.navbar-main ul li a {
+  color: white;
+  font-weight: bold;
+}
