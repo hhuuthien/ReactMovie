@@ -28,3 +28,14 @@
   color: white;
   font-weight: bold;
 }
+
+/* .movie-list {
+  display: flex;
+  max-width: 100%;
+  overflow-x: scroll;
+} */
+
+.card-movie {
+  width: 400px;
+  display: inline-block;
+}
