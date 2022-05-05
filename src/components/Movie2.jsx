@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import CardMovie from "./CardMovie.jsx";
 import ModalMovie from "./ModalMovie.jsx";
 
-class Movie extends Component {
+class Movie2 extends Component {
   async componentDidMount() {
     const url = `${PREFIX}/movie/now_playing?api_key=${API_KEY}&language=${LANGUAGE}&page=1`;
     try {
@@ -31,9 +31,9 @@ class Movie extends Component {
   render() {
     return (
       <div className="ui container">
-        <h3 className="ui header" style={{ marginTop: 20 }}>
+        <h2 className="ui header" style={{ marginTop: 20 }}>
           Now Playing
-        </h3>
+        </h2>
         <div className="movie-list">{this.renderMovieNowPlaying()}</div>
 
         {this.props.isShowModalMovie ? <ModalMovie /> : null}
@@ -49,4 +49,4 @@ const mapStateToProps = (rootReducer) => {
   };
 };
 
-export default connect(mapStateToProps)(Movie);
+export default connect(mapStateToProps)(Movie2);

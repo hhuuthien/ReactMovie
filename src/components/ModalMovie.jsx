@@ -31,7 +31,7 @@ class ModalMovie extends Component {
             </div>
             <div className="description">{movie.overview}</div>
             <div className="action">
-              <button class="ui primary button">See more</button>
+              <button className="ui primary button">See more</button>
             </div>
             <i className="fa-solid fa-circle-xmark close" onClick={() => this.toggleModalMovieOff()}></i>
           </div>
