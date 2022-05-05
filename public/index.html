@@ -21,5 +21,23 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-analytics.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyAcHrcBNGN-v0ArHVJVaeCYDVKFOvIsJh8",
+        authDomain: "movie-tvshow-database.firebaseapp.com",
+        projectId: "movie-tvshow-database",
+        storageBucket: "movie-tvshow-database.appspot.com",
+        messagingSenderId: "247621057189",
+        appId: "1:247621057189:web:8541457894ca3947cceb4c",
+        measurementId: "G-QPTNLH6V0Q",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
   </body>
 </html>

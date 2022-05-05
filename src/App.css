@@ -171,3 +171,7 @@
 .modal-movie .modal .genre .label {
   cursor: pointer;
 }
+
+.modal-movie .modal .action {
+  padding: 0 16px 24px 16px;
+}
