@@ -1,28 +1,37 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { IMG_500_PREFIX } from "../config.js";
 
-export default class CardMovie extends Component {
+class CardMovie extends Component {
   render() {
     const { movie } = this.props;
 
     return (
-      <div className="ui card card-movie">
+      <div
+        className="card-movie"
+        onClick={() => {
+          this.props.dispatch({
+            type: "TOGGLE_MODAL_MOVIE_ON",
+            movie,
+          });
+        }}
+      >
         <div className="image">
-          <img src="/images/avatar2/large/kristy.png" />
+          <img src={`${IMG_500_PREFIX}${movie.poster_path}`} />
         </div>
         <div className="content">
-          <a className="header">Kristy</a>
-          <div className="meta">
-            <span className="date">Joined in 2013</span>
-          </div>
-          <div className="description">Kristy is an art director living in New York.</div>
-        </div>
-        <div className="extra content">
-          <a>
-            <i className="user icon" />
-            22 Friends
-          </a>
+          <a className="title">{movie.title}</a>
+          <div className="description">{movie.overview}</div>
         </div>
       </div>
     );
   }
 }
+
+const mapStateToProps = (rootReducer) => {
+  return {
+    isShowModalMovie: rootReducer.movieReducer.isShowModalMovie,
+  };
+};
+
+export default connect(mapStateToProps)(CardMovie);

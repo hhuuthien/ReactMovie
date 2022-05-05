@@ -1,10 +1,10 @@
-import Navbar from "./components/Navbar";
 import "./App.css";
+import Navbar from "./components/Navbar";
 import Movie from "./components/Movie";
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <Navbar />
       <Movie />
     </div>

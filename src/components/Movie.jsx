@@ -3,6 +3,7 @@ import axios from "axios";
 import { API_KEY, LANGUAGE, PREFIX } from "../config.js";
 import { connect } from "react-redux";
 import CardMovie from "./CardMovie.jsx";
+import ModalMovie from "./ModalMovie.jsx";
 
 class Movie extends Component {
   async componentDidMount() {
@@ -14,6 +15,8 @@ class Movie extends Component {
         type: "LOAD_MOVIE_NOW_PLAYING",
         data: data.results,
       });
+
+      console.log(data.results);
     } catch (error) {
       console.log(error.response.data);
     }
@@ -32,6 +35,8 @@ class Movie extends Component {
           Now Playing
         </h2>
         <div className="movie-list">{this.renderMovieNowPlaying()}</div>
+
+        {this.props.isShowModalMovie ? <ModalMovie /> : null}
       </div>
     );
   }
@@ -40,6 +45,7 @@ class Movie extends Component {
 const mapStateToProps = (rootReducer) => {
   return {
     movieNowPlaying: rootReducer.movieReducer.movieNowPlaying,
+    isShowModalMovie: rootReducer.movieReducer.isShowModalMovie,
   };
 };
 
