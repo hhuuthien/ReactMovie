@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { IMG_PREFIX } from "../data/configData";
 import { findGenreByID } from "../function/findGenreByID";
+import { formatDate } from "../function/formatDate";
 
 class ModalMovie extends Component {
   toggleModalMovieOff() {
@@ -18,7 +19,7 @@ class ModalMovie extends Component {
         <div className="modal-movie">
           <div className="overlay">
             <div className="modal">
-              <img src={`${IMG_PREFIX}${movie.backdrop_path}`} />
+              {movie.backdrop_path === null || movie.backdrop_path === "" ? <img src={"./img/placeholder.png"} /> : <img src={`${IMG_PREFIX}${movie.backdrop_path}`} />}
               <div className="image_overlay"></div>
               <div className="title">{movie.title}</div>
               <div className="genre">
@@ -31,6 +32,7 @@ class ModalMovie extends Component {
                 })}
               </div>
               <div className="description">{movie.overview}</div>
+              <div className="release">Release date: {formatDate(movie.release_date)}</div>
               <div className="action">
                 <button className="ui primary button">See more</button>
               </div>

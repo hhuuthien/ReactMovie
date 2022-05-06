@@ -247,11 +247,11 @@
 }
 
 .modal-movie .modal .description {
-  padding: 0 16px 24px 16px;
+  padding: 0 16px 16px 16px;
 }
 
 .modal-movie .modal .genre {
-  padding: 0 16px 24px 16px;
+  padding: 0 16px 16px 16px;
 }
 
 .modal-movie .modal .genre .label {
@@ -262,6 +262,10 @@
 
 .modal-movie .modal .action {
   padding: 0 16px 24px 16px;
+}
+
+.modal-movie .modal .release {
+  padding: 0 16px 16px 16px;
 }
 
 @media screen and (max-width: 1200px) {

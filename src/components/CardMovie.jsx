@@ -17,7 +17,7 @@ class CardMovie extends Component {
         }}
       >
         <div className="image">
-          <img src={`${IMG_500_PREFIX}${movie.poster_path}`} />
+          {movie.poster_path === null || movie.poster_path === "" ? <img src={"./img/placeholder.png"} /> : <img src={`${IMG_500_PREFIX}${movie.poster_path}`} />}
         </div>
         <div className="content">
           <a className="title">{movie.title}</a>
