@@ -1,5 +1,6 @@
 .home-page {
   width: 100%;
   background-color: #111111;
-  margin-left: 260px;
+  padding-left: 260px;
+  padding-top: 60px;
 }

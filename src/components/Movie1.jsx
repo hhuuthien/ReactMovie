@@ -30,9 +30,9 @@ class Movie1 extends Component {
 
   render() {
     return (
-      <div className="ui container">
-        <h3 className="ui header" style={{ marginTop: 20 }}>
-          Now playing
+      <div className="movie-list-container">
+        <h3 className="ui header movie-list-title">
+          MOVIE <span>NOW PLAYING</span>
         </h3>
         <div className="movie-list">{this.renderMovieNowPlaying()}</div>
       </div>

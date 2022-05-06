@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import "./App.css";
 import HomePage from "./components/HomePage";
 import Navbar from "./components/Navbar";
@@ -10,7 +10,7 @@ function App() {
         <Navbar />
         <Switch>
           <Route exact path={"/home"} component={HomePage} />
-          <Route exact path={"/"} component={HomePage} />
+          <Route exact path={"/"} render={() => <Redirect to="/home" />} />
         </Switch>
       </div>
     </BrowserRouter>

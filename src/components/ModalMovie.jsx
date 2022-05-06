@@ -19,8 +19,17 @@ class ModalMovie extends Component {
         <div className="modal-movie">
           <div className="overlay">
             <div className="modal">
-              {movie.backdrop_path === null || movie.backdrop_path === "" ? <img src={"./img/placeholder.png"} /> : <img src={`${IMG_PREFIX}${movie.backdrop_path}`} />}
-              <div className="image_overlay"></div>
+              {movie.backdrop_path === null || movie.backdrop_path === "" ? (
+                <div>
+                  <img className="unavailable" src={"./img/placeholder.png"} />
+                  <div className="image_overlay_unavailable"></div>
+                </div>
+              ) : (
+                <div>
+                  <img className="available" src={`${IMG_PREFIX}${movie.backdrop_path}`} />
+                  <div className="image_overlay"></div>
+                </div>
+              )}
               <div className="title">{movie.title}</div>
               <div className="genre">
                 {movie.genre_ids.map((id, index) => {

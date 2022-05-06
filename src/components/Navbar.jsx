@@ -10,7 +10,7 @@ export default class Navbar extends Component {
           <div className="navbar-group-title">MENU</div>
           <ul>
             <li>
-              <NavLink to="/home">
+              <NavLink to="/home" activeClassName="active">
                 <i className="fa-solid fa-house"></i>
                 <p>Home</p>
               </NavLink>

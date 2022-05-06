@@ -2,28 +2,25 @@ import axios from "axios";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { API_KEY, LANGUAGE, PREFIX, REGION } from "../data/configData";
-import { modifyDataFromAPI } from "../function/modifyDataFromAPI";
 import CardMovie from "./CardMovie.jsx";
 
-class Movie2 extends Component {
+class Movie3 extends Component {
   async componentDidMount() {
-    const url = `${PREFIX}/movie/upcoming?api_key=${API_KEY}&language=${LANGUAGE}&region=${REGION}&page=1`;
+    const url = `${PREFIX}/movie/popular?api_key=${API_KEY}&language=${LANGUAGE}&region=${REGION}&page=1`;
     try {
       const { data } = await axios.get(url);
 
-      const modifiedData = modifyDataFromAPI(data.results, 2);
-
       this.props.dispatch({
-        type: "LOAD_MOVIE_UP_COMING",
-        data: modifiedData,
+        type: "LOAD_MOVIE_POPULAR",
+        data: data.results,
       });
     } catch (error) {
       console.log(error.response.data);
     }
   }
 
-  renderMovieUpComing() {
-    return this.props.movieUpComing.map((movie, index) => {
+  renderMoviePopular() {
+    return this.props.moviePopular.map((movie, index) => {
       return <CardMovie movie={movie} key={index} />;
     });
   }
@@ -32,9 +29,9 @@ class Movie2 extends Component {
     return (
       <div className="movie-list-container">
         <h3 className="ui header movie-list-title">
-          MOVIE <span>COMING SOON</span>
+          MOVIE <span>POPULAR & TRENDING</span>
         </h3>
-        <div className="movie-list">{this.renderMovieUpComing()}</div>
+        <div className="movie-list">{this.renderMoviePopular()}</div>
       </div>
     );
   }
@@ -42,8 +39,8 @@ class Movie2 extends Component {
 
 const mapStateToProps = (rootReducer) => {
   return {
-    movieUpComing: rootReducer.movieReducer.movieUpComing,
+    moviePopular: rootReducer.movieReducer.moviePopular,
   };
 };
 
-export default connect(mapStateToProps)(Movie2);
+export default connect(mapStateToProps)(Movie3);
