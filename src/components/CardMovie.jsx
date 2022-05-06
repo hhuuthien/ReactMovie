@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { IMG_500_PREFIX } from "../config.js";
+import { IMG_500_PREFIX } from "../data/configData";
 
 class CardMovie extends Component {
   render() {

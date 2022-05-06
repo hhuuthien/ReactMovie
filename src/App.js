@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Navbar2 from "./components/Navbar2";
 import Movie from "./components/Movie";
 import Movie2 from "./components/Movie2";
+import ModalMovie from "./components/ModalMovie";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       </div>
       <Movie />
       <Movie2 />
+      <ModalMovie />
     </div>
   );
 }

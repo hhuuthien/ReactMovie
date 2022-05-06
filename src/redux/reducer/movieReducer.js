@@ -1,5 +1,6 @@
 const DEFAULT_STATE = {
   movieNowPlaying: [],
+  movieUpComing: [],
   isShowModalMovie: false,
   movieInModalMovie: {},
 };
@@ -10,6 +11,12 @@ export const movieReducer = (state = DEFAULT_STATE, action) => {
       return {
         ...state,
         movieNowPlaying: action.data,
+      };
+    }
+    case "LOAD_MOVIE_UP_COMING": {
+      return {
+        ...state,
+        movieUpComing: action.data,
       };
     }
     case "TOGGLE_MODAL_MOVIE_ON": {

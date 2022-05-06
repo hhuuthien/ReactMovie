@@ -1,22 +1,22 @@
-import React, { Component } from "react";
 import axios from "axios";
-import { API_KEY, LANGUAGE, PREFIX } from "../config.js";
+import React, { Component } from "react";
 import { connect } from "react-redux";
+import { API_KEY, LANGUAGE, PREFIX, REGION } from "../data/configData";
 import CardMovie from "./CardMovie.jsx";
-import ModalMovie from "./ModalMovie.jsx";
+import { modifyDataFromAPI } from "../function/modifyDataFromAPI";
 
 class Movie extends Component {
   async componentDidMount() {
-    const url = `${PREFIX}/movie/now_playing?api_key=${API_KEY}&language=${LANGUAGE}&page=1`;
+    const url = `${PREFIX}/movie/now_playing?api_key=${API_KEY}&language=${LANGUAGE}&region=${REGION}&page=1`;
     try {
       const { data } = await axios.get(url);
 
+      const modifiedData = modifyDataFromAPI(data.results, 1);
+
       this.props.dispatch({
         type: "LOAD_MOVIE_NOW_PLAYING",
-        data: data.results,
+        data: modifiedData,
       });
-
-      console.log(data.results);
     } catch (error) {
       console.log(error.response.data);
     }
@@ -32,11 +32,9 @@ class Movie extends Component {
     return (
       <div className="ui container">
         <h3 className="ui header" style={{ marginTop: 20 }}>
-          Now Playing
+          Now playing
         </h3>
         <div className="movie-list">{this.renderMovieNowPlaying()}</div>
-
-        {this.props.isShowModalMovie ? <ModalMovie /> : null}
       </div>
     );
   }
@@ -45,7 +43,6 @@ class Movie extends Component {
 const mapStateToProps = (rootReducer) => {
   return {
     movieNowPlaying: rootReducer.movieReducer.movieNowPlaying,
-    isShowModalMovie: rootReducer.movieReducer.isShowModalMovie,
   };
 };
 

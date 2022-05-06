@@ -1,4 +1,4 @@
-const genres = [
+export const genres = [
   { id: 28, name: "Action" },
   { id: 12, name: "Adventure" },
   { id: 16, name: "Animation" },
@@ -19,12 +19,3 @@ const genres = [
   { id: 10752, name: "War" },
   { id: 37, name: "Western" },
 ];
-
-export const findGenreByID = (id) => {
-  let genre = genres.find((genre) => genre.id === id);
-  if (genre) {
-    return genre.name;
-  } else {
-    return "undefined";
-  }
-};
