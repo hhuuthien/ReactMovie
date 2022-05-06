@@ -1,0 +1,87 @@
+.modal-movie {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+.modal-movie .overlay {
+  width: 100%;
+  height: 100%;
+  background-color: #f5f5f5ce;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-movie .modal {
+  width: 50vw;
+  height: fit-content;
+  background-color: #c5c5c5;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+}
+
+.modal-movie .modal img {
+  width: 100%;
+  height: 55vh;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.modal-movie .image_overlay {
+  width: 100%;
+  height: 55vh;
+  background: rgb(197, 197, 197);
+  background: linear-gradient(0deg, rgba(197, 197, 197, 1) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 100%);
+  position: absolute;
+  top: 2px;
+  left: 0;
+}
+
+.modal-movie .modal .title {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  padding: 0 16px 24px 16px;
+  font-weight: bold;
+  color: #032541;
+}
+
+.modal-movie .modal .close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 2.5rem;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.modal-movie .modal .close:hover {
+  color: #9d9d9d;
+}
+
+.modal-movie .modal .description {
+  padding: 0 16px 16px 16px;
+}
+
+.modal-movie .modal .genre {
+  padding: 0 16px 16px 16px;
+}
+
+.modal-movie .modal .genre .label {
+  cursor: pointer;
+  margin-right: 5px !important;
+  margin-bottom: 5px !important;
+}
+
+.modal-movie .modal .action {
+  padding: 0 16px 24px 16px;
+}
+
+.modal-movie .modal .release {
+  padding: 0 16px 16px 16px;
+}

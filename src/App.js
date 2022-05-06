@@ -1,24 +1,16 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
-import MoviePage from "./components/MoviePage";
+import HomePage from "./components/HomePage";
 import Navbar from "./components/Navbar";
-import Navbar2 from "./components/Navbar2";
-import TVShowPage from "./components/TVShowPage";
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <div className="navbar-horizontal">
-          <Navbar />
-        </div>
-        <div className="navbar-vertical">
-          <Navbar2 />
-        </div>
+        <Navbar />
         <Switch>
-          <Route exact path={"/movie"} component={MoviePage} />
-          <Route exact path={"/tvshow"} component={TVShowPage} />
-          <Route exact path={"/"} component={MoviePage} />
+          <Route exact path={"/home"} component={HomePage} />
+          <Route exact path={"/"} component={HomePage} />
         </Switch>
       </div>
     </BrowserRouter>
