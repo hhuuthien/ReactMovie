@@ -6,9 +6,9 @@
 
 .App {
   position: relative;
-  display: flex;
 }
 
+@import "./style/Topbar.css";
 @import "./style/Navbar.css";
 @import "./style/HomePage.css";
 @import "./style/CardMovie.css";

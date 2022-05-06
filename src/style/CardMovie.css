@@ -1,5 +1,4 @@
 .card-movie {
-  width: 220px;
   margin-right: 20px;
 }
 
@@ -12,15 +11,15 @@
 }
 
 .card-movie .image {
-  width: 200px;
-  height: 300px;
+  width: 180px;
+  height: 270px;
   border-radius: 10px;
   overflow: hidden;
 }
 
 .card-movie .image img {
-  width: 200px;
-  height: 300px;
+  width: 180px;
+  height: 270px;
   object-fit: cover;
   object-position: center;
   cursor: pointer;

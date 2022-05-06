@@ -1,11 +1,11 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 
-export default class Navbar extends Component {
+class Navbar extends Component {
   render() {
     return (
-      <div className="navbar-main">
-        <div className="navbar-blank"></div>
+      <div className={this.props.isShowNavbar ? "navbar-main" : "navbar-main hide"}>
         <div className="navbar-group">
           <div className="navbar-group-title">MENU</div>
           <ul>
@@ -91,3 +91,11 @@ export default class Navbar extends Component {
     );
   }
 }
+
+const mapStateToProps = (rootReducer) => {
+  return {
+    isShowNavbar: rootReducer.navbarReducer.isShowNavbar,
+  };
+};
+
+export default connect(mapStateToProps)(Navbar);
