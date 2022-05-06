@@ -1,23 +1,27 @@
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
+import MoviePage from "./components/MoviePage";
 import Navbar from "./components/Navbar";
 import Navbar2 from "./components/Navbar2";
-import Movie from "./components/Movie";
-import Movie2 from "./components/Movie2";
-import ModalMovie from "./components/ModalMovie";
+import TVShowPage from "./components/TVShowPage";
 
 function App() {
   return (
-    <div className="App">
-      <div className="navbar-horizontal">
-        <Navbar />
+    <BrowserRouter>
+      <div className="App">
+        <div className="navbar-horizontal">
+          <Navbar />
+        </div>
+        <div className="navbar-vertical">
+          <Navbar2 />
+        </div>
+        <Switch>
+          <Route exact path={"/movie"} component={MoviePage} />
+          <Route exact path={"/tvshow"} component={TVShowPage} />
+          <Route exact path={"/"} component={MoviePage} />
+        </Switch>
       </div>
-      <div className="navbar-vertical">
-        <Navbar2 />
-      </div>
-      <Movie />
-      <Movie2 />
-      <ModalMovie />
-    </div>
+    </BrowserRouter>
   );
 }
 

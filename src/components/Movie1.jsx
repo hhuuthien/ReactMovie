@@ -5,7 +5,7 @@ import { API_KEY, LANGUAGE, PREFIX, REGION } from "../data/configData";
 import CardMovie from "./CardMovie.jsx";
 import { modifyDataFromAPI } from "../function/modifyDataFromAPI";
 
-class Movie extends Component {
+class Movie1 extends Component {
   async componentDidMount() {
     const url = `${PREFIX}/movie/now_playing?api_key=${API_KEY}&language=${LANGUAGE}&region=${REGION}&page=1`;
     try {
@@ -46,4 +46,4 @@ const mapStateToProps = (rootReducer) => {
   };
 };
 
-export default connect(mapStateToProps)(Movie);
+export default connect(mapStateToProps)(Movie1);

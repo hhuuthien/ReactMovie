@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
 
 export default class Navbar2 extends Component {
   state = {
@@ -26,16 +27,44 @@ export default class Navbar2 extends Component {
           </div>
           <ul>
             <li>
-              <a href="">Movies</a>
+              <NavLink
+                to="/movie"
+                onClick={() => {
+                  this.toggleNavBar();
+                }}
+              >
+                Movies
+              </NavLink>
             </li>
             <li>
-              <a href="">TV Shows</a>
+              <NavLink
+                to="/tvshow"
+                onClick={() => {
+                  this.toggleNavBar();
+                }}
+              >
+                TV Shows
+              </NavLink>
             </li>
             <li>
-              <a href="">People</a>
+              <NavLink
+                to=""
+                onClick={() => {
+                  this.toggleNavBar();
+                }}
+              >
+                People
+              </NavLink>
             </li>
             <li>
-              <a href="">More</a>
+              <NavLink
+                to=""
+                onClick={() => {
+                  this.toggleNavBar();
+                }}
+              >
+                More
+              </NavLink>
             </li>
           </ul>
         </div>
