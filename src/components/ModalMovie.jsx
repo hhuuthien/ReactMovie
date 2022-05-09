@@ -43,7 +43,14 @@ class ModalMovie extends Component {
               <div className="description">{movie.overview}</div>
               <div className="release">Release date: {formatDate(movie.release_date)}</div>
               <div className="action">
-                <button className="ui primary button">See more</button>
+                <button
+                  className="ui primary button"
+                  onClick={() => {
+                    this.props.history.push("/movie/" + movie.id);
+                  }}
+                >
+                  See more
+                </button>
               </div>
               <i className="fa-solid fa-circle-xmark close" onClick={() => this.toggleModalMovieOff()}></i>
             </div>

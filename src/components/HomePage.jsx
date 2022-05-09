@@ -14,7 +14,7 @@ class HomePage extends Component {
         <Movie2 />
         <Movie3 />
         <Movie4 />
-        <ModalMovie />
+        <ModalMovie history={this.props.history} />
       </div>
     );
   }

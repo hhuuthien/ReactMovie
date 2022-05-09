@@ -14,6 +14,7 @@
 @import "./style/CardMovie.css";
 @import "./style/ModalMovie.css";
 @import "./style/Movie.css";
+@import "./style/DetailMoviePage.css";
 
 @media screen and (max-width: 300px) {
   .App {

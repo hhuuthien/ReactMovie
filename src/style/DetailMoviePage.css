@@ -1,0 +1,12 @@
+.detail-movie-page {
+  width: 100%;
+  background-color: #111111;
+  padding-left: 260px;
+  padding-top: 60px;
+  transition: all 0.8s ease;
+  color: red;
+}
+
+.detail-movie-page.expand {
+  padding-left: 0;
+}
