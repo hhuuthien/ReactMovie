@@ -6,6 +6,8 @@
   height: calc(100vh - 60px);
   background-color: #1c1c1c;
   transition: all 0.3s ease;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .navbar-main.hide {

@@ -123,11 +123,21 @@
   }
 
   .modal-movie .modal img.available {
-    height: 35vh;
+    height: 30vh;
   }
 
   .modal-movie .image_overlay {
-    height: 35vh;
+    height: 30vh;
+  }
+
+  .modal-movie .modal .title {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+  }
+
+  .modal-movie .modal .description,
+  .modal-movie .modal .release {
+    font-size: 0.9rem;
   }
 }
 
