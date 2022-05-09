@@ -54,3 +54,19 @@
   font-size: 0.9rem;
   color: #aaaaaa;
 }
+
+@media screen and (max-width: 768px) {
+  .card-movie {
+    margin-right: 15px;
+  }
+
+  .card-movie .image {
+    width: 160px;
+    height: 240px;
+  }
+
+  .card-movie .image img {
+    width: 160px;
+    height: 240px;
+  }
+}

@@ -28,10 +28,4 @@ class CardMovie extends Component {
   }
 }
 
-const mapStateToProps = (rootReducer) => {
-  return {
-    isShowModalMovie: rootReducer.movieReducer.isShowModalMovie,
-  };
-};
-
-export default connect(mapStateToProps)(CardMovie);
+export default connect()(CardMovie);

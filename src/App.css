@@ -14,3 +14,9 @@
 @import "./style/CardMovie.css";
 @import "./style/ModalMovie.css";
 @import "./style/Movie.css";
+
+@media screen and (max-width: 300px) {
+  .App {
+    display: none;
+  }
+}

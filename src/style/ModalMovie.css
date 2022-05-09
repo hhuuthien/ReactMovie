@@ -110,3 +110,29 @@
   padding: 0 16px 16px 16px;
   color: #aaaaaa;
 }
+
+@media screen and (max-width: 1200px) {
+  .modal-movie .modal {
+    width: 70vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .modal-movie .modal {
+    width: 85vw;
+  }
+
+  .modal-movie .modal img.available {
+    height: 35vh;
+  }
+
+  .modal-movie .image_overlay {
+    height: 35vh;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .modal-movie .modal {
+    width: 95vw;
+  }
+}

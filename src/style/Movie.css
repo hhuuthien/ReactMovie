@@ -21,3 +21,19 @@
   display: inline-block !important;
   margin-left: 20px !important;
 }
+
+@media screen and (max-width: 768px) {
+  .movie-list-container {
+    padding: 0 15px;
+  }
+
+  .movie-list-title {
+    margin-top: 30px !important;
+    font-size: 1.4rem !important;
+  }
+
+  .movie-list-title span {
+    font-size: 1.1rem !important;
+    margin-left: 15px !important;
+  }
+}
