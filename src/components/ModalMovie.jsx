@@ -46,6 +46,7 @@ class ModalMovie extends Component {
                 <button
                   className="ui primary button"
                   onClick={() => {
+                    this.toggleModalMovieOff();
                     this.props.history.push("/movie/" + movie.id);
                   }}
                 >

@@ -3,10 +3,82 @@
   background-color: #111111;
   padding-left: 260px;
   padding-top: 60px;
-  transition: all 0.8s ease;
-  color: red;
+  transition: all 0.3s ease;
 }
 
 .detail-movie-page.expand {
   padding-left: 0;
+}
+
+.dm-backdrop {
+  width: 100%;
+  height: 500px;
+  position: relative;
+}
+
+.dm-blank {
+  width: 320px;
+  height: 500px;
+  background-color: #111111;
+}
+
+.dm-backdrop > img {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 320px;
+  width: calc(100% - 320px);
+  height: 500px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.dm-backdrop-overlay {
+  position: absolute;
+  top: 0;
+  left: 320px;
+  width: calc(100% - 320px);
+  height: 500px;
+  background: rgb(17, 17, 17);
+  background: linear-gradient(90deg, rgba(17, 17, 17, 1) 0%, rgba(17, 17, 17, 0.8) 50%, rgba(17, 17, 17, 0.8) 100%);
+}
+
+.dm-content {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  width: calc(100% - 80px);
+  height: calc(100% - 80px);
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.dm-poster {
+  width: 280px;
+  height: 420px;
+}
+
+.dm-poster > img {
+  width: 280px;
+  height: 420px;
+  display: block;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.dm-content .dm-info {
+  margin-left: 40px;
+  color: whitesmoke;
+}
+
+.dm-info .dm-title {
+  font-weight: bold;
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+}
+
+.dm-info .dm-tagline {
+  margin-bottom: 24px;
+  font-size: 1.2rem;
+  font-weight: bold;
 }

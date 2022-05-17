@@ -5,6 +5,8 @@ const DEFAULT_STATE = {
   movieTopRated: [],
   isShowModalMovie: false,
   movieInModalMovie: {},
+  //
+  movieInDetail: {},
 };
 
 export const movieReducer = (state = DEFAULT_STATE, action) => {
@@ -45,6 +47,12 @@ export const movieReducer = (state = DEFAULT_STATE, action) => {
         ...state,
         isShowModalMovie: false,
         movieInModalMovie: {},
+      };
+    }
+    case "LOAD_DETAIL_MOVIE": {
+      return {
+        ...state,
+        movieInDetail: action.data,
       };
     }
     default:
