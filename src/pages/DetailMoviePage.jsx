@@ -30,6 +30,10 @@ class DetailMoviePage extends Component {
   render() {
     const { movie } = this.props;
 
+    if (Number(this.props.match.params.movieID) !== movie.id) {
+      return <></>;
+    }
+
     return (
       <div className="detail-movie-page">
         <div className="dm-backdrop">
@@ -68,7 +72,6 @@ class DetailMoviePage extends Component {
 
 const mapStateToProps = (rootReducer) => {
   return {
-    // isShowNavbar: rootReducer.navbarReducer.isShowNavbar,
     movie: rootReducer.movieReducer.movieInDetail,
   };
 };

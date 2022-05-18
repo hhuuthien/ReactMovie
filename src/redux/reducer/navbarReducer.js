@@ -4,7 +4,7 @@ const DEFAULT_STATE = {
 
 export const navbarReducer = (state = DEFAULT_STATE, action) => {
   switch (action.type) {
-    case "TOGGLE_SHOW_NAVBAR": {
+    case "TOGGLE_NAVBAR": {
       return {
         ...state,
         isShowNavbar: !state.isShowNavbar,

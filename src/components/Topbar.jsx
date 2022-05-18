@@ -15,7 +15,7 @@ class Topbar extends Component {
         className="topbar"
         onClick={() => {
           this.props.dispatch({
-            type: "TOGGLE_SHOW_NAVBAR",
+            type: "TOGGLE_NAVBAR",
           });
         }}
       >
