@@ -43,7 +43,7 @@ class DetailMoviePage extends Component {
             <div className="dm-info">
               <h1 className="dm-title">{movie.title}</h1>
               <div className="dm-tagline">{movie.tagline}</div>
-              <div style={{ marginBottom: 14 }}>
+              <div style={{ marginBottom: 14 }} className="dm-release">
                 Release date: {formatDate(movie.release_date)} - Runtime: {formatRuntime(movie.runtime)}
               </div>
               <div className="dm-genre" style={{ marginBottom: 14 }}>
@@ -55,7 +55,7 @@ class DetailMoviePage extends Component {
                   );
                 })}
               </div>
-              <div className="overview">{movie.overview}</div>
+              <div className="dm-overview">{movie.overview}</div>
             </div>
           </div>
         </div>

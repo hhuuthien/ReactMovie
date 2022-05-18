@@ -162,11 +162,26 @@
     height: calc(100% - 52px);
   }
 
-  .dm-info .dm-title {
-    font-size: 1.8rem;
-  }
-
   .dm-content .dm-info {
     margin-left: 26px;
+    max-height: 348px;
+    overflow-y: scroll;
+  }
+
+  .dm-info .dm-title {
+    font-size: 1.5rem;
+  }
+
+  .dm-info .dm-tagline {
+    margin-bottom: 12px;
+    font-size: 1rem;
+  }
+
+  .dm-info .dm-release {
+    font-size: 0.9rem;
+  }
+
+  .dm-info .dm-overview {
+    font-size: 0.9rem;
   }
 }
