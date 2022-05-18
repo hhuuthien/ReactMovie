@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import ModalMovie from "../components/ModalMovie";
 import Movie1 from "../components/Movie1";
 import Movie2 from "../components/Movie2";
 import Movie3 from "../components/Movie3";
@@ -14,7 +13,6 @@ class HomePage extends Component {
         <Movie2 />
         <Movie3 />
         <Movie4 />
-        <ModalMovie history={this.props.history} />
       </div>
     );
   }
