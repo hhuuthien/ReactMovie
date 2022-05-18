@@ -1,7 +1,7 @@
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import "./App.css";
-import DetailMoviePage from "./components/DetailMoviePage";
-import HomePage from "./components/HomePage";
+import DetailMoviePage from "./pages/DetailMoviePage";
+import HomePage from "./pages/HomePage";
 import Navbar from "./components/Navbar";
 import Topbar from "./components/Topbar";
 

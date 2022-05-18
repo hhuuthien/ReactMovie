@@ -10,6 +10,18 @@ export const navbarReducer = (state = DEFAULT_STATE, action) => {
         isShowNavbar: !state.isShowNavbar,
       };
     }
+    case "HIDE_NAVBAR": {
+      return {
+        ...state,
+        isShowNavbar: false,
+      };
+    }
+    case "SHOW_NAVBAR": {
+      return {
+        ...state,
+        isShowNavbar: true,
+      };
+    }
     default:
       return { ...state };
   }

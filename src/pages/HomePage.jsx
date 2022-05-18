@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import ModalMovie from "./ModalMovie";
-import Movie1 from "./Movie1";
-import Movie2 from "./Movie2";
-import Movie3 from "./Movie3";
-import Movie4 from "./Movie4";
+import ModalMovie from "../components/ModalMovie";
+import Movie1 from "../components/Movie1";
+import Movie2 from "../components/Movie2";
+import Movie3 from "../components/Movie3";
+import Movie4 from "../components/Movie4";
 
 class HomePage extends Component {
   render() {

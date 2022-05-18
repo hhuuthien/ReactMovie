@@ -4,9 +4,15 @@ import { connect } from "react-redux";
 import { API_KEY, IMG_PREFIX, LANGUAGE, PREFIX } from "../data/configData";
 import { findGenreByID } from "../function/findGenreByID";
 import { formatDate } from "../function/formatDate";
+import { formatRuntime } from "../function/formatRuntime";
+import NavbarOverlay from "../components/NavbarOverlay";
 
 class DetailMoviePage extends Component {
   async componentDidMount() {
+    this.props.dispatch({
+      type: "HIDE_NAVBAR",
+    });
+
     const { movieID } = this.props.match.params;
     const url = `${PREFIX}/movie/${movieID}?api_key=${API_KEY}&language=${LANGUAGE}`;
     try {
@@ -23,10 +29,9 @@ class DetailMoviePage extends Component {
 
   render() {
     const { movie } = this.props;
-    console.log(movie);
 
     return (
-      <div className={this.props.isShowNavbar ? "detail-movie-page" : "detail-movie-page expand"}>
+      <div className="detail-movie-page">
         <div className="dm-backdrop">
           <div className="dm-blank"></div>
           <img src={`${IMG_PREFIX}${movie.backdrop_path}`} alt={movie.title} />
@@ -38,7 +43,9 @@ class DetailMoviePage extends Component {
             <div className="dm-info">
               <h1 className="dm-title">{movie.title}</h1>
               <div className="dm-tagline">{movie.tagline}</div>
-              <div style={{ marginBottom: 14 }}>Release date: {formatDate(movie.release_date)}</div>
+              <div style={{ marginBottom: 14 }}>
+                Release date: {formatDate(movie.release_date)} - Runtime: {formatRuntime(movie.runtime)}
+              </div>
               <div className="dm-genre" style={{ marginBottom: 14 }}>
                 {movie.genres?.map((genre, index) => {
                   return (
@@ -48,9 +55,12 @@ class DetailMoviePage extends Component {
                   );
                 })}
               </div>
+              <div className="overview">{movie.overview}</div>
             </div>
           </div>
         </div>
+
+        <NavbarOverlay />
       </div>
     );
   }
@@ -58,7 +68,7 @@ class DetailMoviePage extends Component {
 
 const mapStateToProps = (rootReducer) => {
   return {
-    isShowNavbar: rootReducer.navbarReducer.isShowNavbar,
+    // isShowNavbar: rootReducer.navbarReducer.isShowNavbar,
     movie: rootReducer.movieReducer.movieInDetail,
   };
 };

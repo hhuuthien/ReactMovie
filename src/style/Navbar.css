@@ -8,6 +8,7 @@
   transition: all 0.3s ease;
   overflow-x: hidden;
   overflow-y: scroll;
+  z-index: 97;
 }
 
 .navbar-main.hide {

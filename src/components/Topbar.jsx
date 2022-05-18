@@ -6,7 +6,7 @@ class Topbar extends Component {
     // ẩn navbar lúc đầu nếu màn hình nhỏ hoặc thiết bị di động
     if (window.innerWidth <= 768) {
       this.props.dispatch({
-        type: "TOGGLE_SHOW_NAVBAR",
+        type: "HIDE_NAVBAR",
       });
     }
 

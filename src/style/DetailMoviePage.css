@@ -1,13 +1,10 @@
 .detail-movie-page {
   width: 100%;
   background-color: #111111;
-  padding-left: 260px;
+  padding-left: 0;
   padding-top: 60px;
   transition: all 0.3s ease;
-}
-
-.detail-movie-page.expand {
-  padding-left: 0;
+  position: relative;
 }
 
 .dm-backdrop {
@@ -73,7 +70,7 @@
 
 .dm-info .dm-title {
   font-weight: bold;
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   margin-bottom: 8px;
 }
 
@@ -81,4 +78,95 @@
   margin-bottom: 24px;
   font-size: 1.2rem;
   font-weight: bold;
+}
+
+.dm-info .dm-genre .label {
+  cursor: pointer;
+  margin-right: 5px !important;
+  margin-bottom: 5px !important;
+}
+
+@media screen and (max-width: 992px) {
+  .dm-backdrop {
+    height: 455px;
+  }
+
+  .dm-poster {
+    width: 250px;
+    height: 375px;
+  }
+
+  .dm-poster > img {
+    width: 250px;
+    height: 375px;
+  }
+
+  .dm-blank {
+    width: 290px;
+    height: 455px;
+  }
+
+  .dm-backdrop > img {
+    left: 290px;
+    width: calc(100% - 290px);
+    height: 455px;
+  }
+
+  .dm-backdrop-overlay {
+    left: 290px;
+    width: calc(100% - 290px);
+    height: 455px;
+  }
+
+  .dm-info .dm-title {
+    font-size: 2.1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .dm-backdrop {
+    height: 400px;
+  }
+
+  .dm-poster {
+    width: 232px;
+    height: 348px;
+  }
+
+  .dm-poster > img {
+    width: 232px;
+    height: 348px;
+  }
+
+  .dm-blank {
+    width: 258px;
+    height: 400px;
+  }
+
+  .dm-backdrop > img {
+    left: 258px;
+    width: calc(100% - 258px);
+    height: 400px;
+  }
+
+  .dm-backdrop-overlay {
+    left: 258px;
+    width: calc(100% - 258px);
+    height: 400px;
+  }
+
+  .dm-content {
+    top: 26px;
+    left: 26px;
+    width: calc(100% - 52px);
+    height: calc(100% - 52px);
+  }
+
+  .dm-info .dm-title {
+    font-size: 1.8rem;
+  }
+
+  .dm-content .dm-info {
+    margin-left: 26px;
+  }
 }
