@@ -1,0 +1,10 @@
+.dm-cast {
+  padding: 20px 40px;
+}
+
+.dm-cast-list {
+  display: flex;
+  max-width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
