@@ -10,10 +10,7 @@ class CardMovie extends Component {
       <div
         className="card-movie"
         onClick={() => {
-          this.props.dispatch({
-            type: "TOGGLE_MODAL_MOVIE_ON",
-            movie,
-          });
+          this.props.history.push("/movie/" + movie.id);
         }}
       >
         <div className="image">

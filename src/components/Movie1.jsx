@@ -24,7 +24,7 @@ class Movie1 extends Component {
 
   renderMovieNowPlaying() {
     return this.props.movieNowPlaying.map((movie, index) => {
-      return <CardMovie movie={movie} key={index} />;
+      return <CardMovie movie={movie} key={index} history={this.props.history} />;
     });
   }
 

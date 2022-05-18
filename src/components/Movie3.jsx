@@ -21,7 +21,7 @@ class Movie3 extends Component {
 
   renderMoviePopular() {
     return this.props.moviePopular.map((movie, index) => {
-      return <CardMovie movie={movie} key={index} />;
+      return <CardMovie movie={movie} key={index} history={this.props.history} />;
     });
   }
 

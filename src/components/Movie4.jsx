@@ -21,7 +21,7 @@ class Movie4 extends Component {
 
   renderMovieTopRated() {
     return this.props.movieTopRated.map((movie, index) => {
-      return <CardMovie movie={movie} key={index} />;
+      return <CardMovie movie={movie} key={index} history={this.props.history} />;
     });
   }
 

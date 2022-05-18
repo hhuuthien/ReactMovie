@@ -9,10 +9,10 @@ class HomePage extends Component {
   render() {
     return (
       <div className={this.props.isShowNavbar ? "home-page" : "home-page expand"}>
-        <Movie1 />
-        <Movie2 />
-        <Movie3 />
-        <Movie4 />
+        <Movie1 history={this.props.history} />
+        <Movie2 history={this.props.history} />
+        <Movie3 history={this.props.history} />
+        <Movie4 history={this.props.history} />
       </div>
     );
   }
