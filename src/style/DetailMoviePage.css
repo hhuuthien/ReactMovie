@@ -47,8 +47,9 @@
   width: calc(100% - 80px);
   height: calc(100% - 80px);
   display: flex;
+  flex-direction: row;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: flex-end;
 }
 
 .dm-poster {
@@ -183,5 +184,74 @@
 
   .dm-info .dm-overview {
     font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .dm-blank {
+    display: none;
+  }
+
+  .dm-backdrop {
+    width: 100%;
+    height: 400px;
+    position: relative;
+  }
+
+  .dm-backdrop > img {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+  }
+
+  .dm-backdrop-overlay {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    background: rgba(17, 17, 17, 0.8);
+  }
+
+  .dm-poster {
+    display: none;
+  }
+
+  .dm-content {
+    top: 30px;
+    left: 30px;
+    width: calc(100% - 60px);
+    height: calc(100% - 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+
+  .dm-content .dm-info {
+    margin-left: 0;
+    max-height: unset;
+    overflow-y: visible;
+  }
+
+  .dm-info .dm-title {
+    font-size: 1.4rem;
+  }
+
+  .dm-info .dm-tagline {
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+  }
+
+  .dm-info .dm-release {
+    font-size: 0.8rem;
+  }
+
+  .dm-info .dm-overview {
+    font-size: 0.8rem;
+  }
+
+  .dm-info .dm-genre .label {
+    font-size: 0.8rem;
   }
 }

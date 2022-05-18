@@ -51,7 +51,7 @@ class DetailMoviePage extends Component {
                 Release date: {formatDate(movie.release_date)} - Runtime: {formatRuntime(movie.runtime)}
               </div>
               <div className="dm-genre" style={{ marginBottom: 14 }}>
-                {movie.genres?.map((genre, index) => {
+                {movie.genres.map((genre, index) => {
                   return (
                     <div className="ui label" key={index}>
                       {findGenreByID(genre.id)}
