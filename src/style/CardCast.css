@@ -1,6 +1,6 @@
 .card-cast-image {
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   overflow: hidden;
 }
@@ -14,9 +14,41 @@
 }
 
 .card-cast {
-  margin-right: 20px;
+  margin-right: 30px;
+  margin-bottom: 8px;
 }
 
 .card-cast:last-child {
   margin-right: 0;
+}
+
+.card-cast-name {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.card-cast-character {
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 4px;
+}
+
+@media screen and (max-width: 576px) {
+  .card-cast-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .card-cast {
+    margin-right: 20px;
+  }
+
+  .card-cast-name {
+    font-size: 0.9rem;
+  }
+
+  .card-cast-character {
+    font-size: 0.8rem;
+  }
 }

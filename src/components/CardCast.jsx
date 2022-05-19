@@ -7,9 +7,10 @@ export default class CardCast extends Component {
     return (
       <div className="card-cast">
         <div className="card-cast-image">
-          <img src={`${IMG_500_PREFIX}${cast.profile_path}`} />
+          {cast.profile_path === null || cast.profile_path === "" ? <img src={"/img/people_placeholder.png"} /> : <img src={`${IMG_500_PREFIX}${cast.profile_path}`} />}
         </div>
         <div className="card-cast-name">{cast.name}</div>
+        <div className="card-cast-character">{cast.character}</div>
       </div>
     );
   }

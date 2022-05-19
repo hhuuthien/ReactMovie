@@ -1,10 +1,10 @@
-.dm-cast {
+.dm-crew {
   padding: 20px 40px;
   background-color: #111111;
   color: whitesmoke;
 }
 
-.dm-cast-list {
+.dm-crew-list {
   display: flex;
   max-width: 100%;
   overflow-x: scroll;
@@ -12,11 +12,11 @@
 }
 
 @media screen and (max-width: 576px) {
-  .dm-cast {
+  .dm-crew {
     padding: 15px 20px;
   }
 
-  .dm-cast-title {
+  .dm-crew-title {
     font-size: 1.5rem;
   }
 }

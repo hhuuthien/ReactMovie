@@ -3,7 +3,7 @@ import CardCast from "./CardCast";
 
 export default class DetailMovieCast extends Component {
   render() {
-    const { cast, crew } = this.props;
+    const { cast } = this.props;
 
     return (
       <div className="dm-cast">

@@ -16,7 +16,9 @@
 @import "./style/DetailMoviePage.css";
 @import "./style/NavbarOverlay.css";
 @import "./style/DetailMovieCast.css";
+@import "./style/DetailMovieCrew.css";
 @import "./style/CardCast.css";
+@import "./style/CardCrew.css";
 
 @media screen and (max-width: 300px) {
   .App {

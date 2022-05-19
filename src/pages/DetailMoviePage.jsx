@@ -1,12 +1,13 @@
 import axios from "axios";
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import DetailMovieCast from "../components/DetailMovieCast";
+import DetailMovieCrew from "../components/DetailMovieCrew";
+import NavbarOverlay from "../components/NavbarOverlay";
 import { API_KEY, IMG_PREFIX, LANGUAGE, PREFIX } from "../data/configData";
 import { findGenreByID } from "../function/findGenreByID";
 import { formatDate } from "../function/formatDate";
 import { formatRuntime } from "../function/formatRuntime";
-import NavbarOverlay from "../components/NavbarOverlay";
-import DetailMovieCast from "../components/DetailMovieCast";
 
 class DetailMoviePage extends Component {
   async componentDidMount() {
@@ -68,7 +69,8 @@ class DetailMoviePage extends Component {
 
           <NavbarOverlay />
         </div>
-        <DetailMovieCast cast={movie.credits.cast} crew={movie.credits.crew} />
+        <DetailMovieCrew crew={movie.credits.crew} />
+        <DetailMovieCast cast={movie.credits.cast} />
       </>
     );
   }

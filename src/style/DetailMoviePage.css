@@ -218,10 +218,10 @@
   }
 
   .dm-content {
-    top: 30px;
-    left: 30px;
-    width: calc(100% - 60px);
-    height: calc(100% - 60px);
+    top: 20px;
+    left: 20px;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
