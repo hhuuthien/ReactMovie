@@ -1,16 +1,3 @@
-.card-crew {
-  margin-right: 40px;
-  margin-bottom: 8px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-end;
-}
-
-.card-crew:last-child {
-  margin-right: 0;
-}
-
 .card-crew-image {
   width: 100px;
   height: 100px;
@@ -26,37 +13,42 @@
   object-position: top;
 }
 
-.card-crew-info {
-  margin-left: 8px;
-  width: max-content;
+.card-crew {
+  margin-right: 30px;
+  margin-bottom: 8px;
+}
+
+.card-crew:last-child {
+  margin-right: 0;
 }
 
 .card-crew-name {
+  text-align: center;
   font-weight: bold;
+  margin-top: 8px;
 }
 
 .card-crew-job {
   font-size: 0.9rem;
+  text-align: center;
   margin-top: 4px;
 }
 
 @media screen and (max-width: 576px) {
-  .card-crew {
-    margin-right: 30px;
-  }
-
   .card-crew-image {
     width: 80px;
     height: 80px;
   }
 
+  .card-crew {
+    margin-right: 20px;
+  }
+
   .card-crew-name {
-    font-weight: bold;
     font-size: 0.9rem;
   }
 
-  .card-crew-job {
+  .card-crew-character {
     font-size: 0.8rem;
-    margin-top: 4px;
   }
 }

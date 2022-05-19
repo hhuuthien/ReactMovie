@@ -12,8 +12,8 @@
   position: fixed;
   top: 50px;
   left: 50%;
-  width: 1000px;
-  height: calc(100vh - 100px);
+  width: 600px;
+  height: fit-content;
   transform: translateX(-50%);
   background-color: #111111;
   color: whitesmoke;
@@ -21,35 +21,26 @@
 }
 
 .mc-title {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: bold;
+  line-height: 1.2;
 }
 
 .mc-credit {
   margin-top: 30px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.mc-cast {
-  width: 450px;
-}
-
-.mc-crew {
-  width: 450px;
 }
 
 .mc-cast-list,
 .mc-crew-list {
   margin-top: 30px;
-  max-height: calc(100vh - 260px);
+  max-height: 60vh;
   overflow-y: scroll;
 }
 
 .mc-close {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 15px;
+  right: 15px;
   color: whitesmoke;
   font-size: 1.6rem;
   cursor: pointer;
@@ -58,4 +49,18 @@
 
 .mc-close:hover {
   color: rgb(180, 180, 180);
+}
+
+@media screen and (max-width: 600px) {
+  .mc-modal {
+    position: fixed;
+    top: 50px;
+    left: 50%;
+    width: 100%;
+    height: fit-content;
+    transform: translateX(-50%);
+    background-color: #111111;
+    color: whitesmoke;
+    padding: 30px;
+  }
 }

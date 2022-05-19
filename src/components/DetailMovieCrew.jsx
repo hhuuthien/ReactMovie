@@ -20,6 +20,7 @@ class DetailMovieCrew extends Component {
           onClick={() => {
             this.props.dispatch({
               type: "SHOW_MODAL",
+              whatToShow: "crew",
             });
           }}
         >

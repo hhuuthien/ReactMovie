@@ -33,4 +33,9 @@
   .dm-cast-title {
     font-size: 1.4rem;
   }
+
+  .dm-cast-all {
+    top: 15px;
+    right: 20px;
+  }
 }

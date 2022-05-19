@@ -14,6 +14,7 @@ class DetailMovieCast extends Component {
           onClick={() => {
             this.props.dispatch({
               type: "SHOW_MODAL",
+              whatToShow: "cast",
             });
           }}
         >
