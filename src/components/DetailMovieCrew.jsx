@@ -14,7 +14,7 @@ class DetailMovieCrew extends Component {
 
     return (
       <div className="dm-crew">
-        <h2 className="dm-crew-title">Crews</h2>
+        <h3 className="dm-crew-title">CREWS</h3>
         <div
           className="dm-crew-all"
           onClick={() => {

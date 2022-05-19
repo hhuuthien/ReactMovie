@@ -68,8 +68,8 @@ class DetailMoviePage extends Component {
             </div>
           </div>
         </div>
-        <DetailMovieCrew crew={movie.credits.crew} />
         <DetailMovieCast cast={movie.credits.cast} />
+        <DetailMovieCrew crew={movie.credits.crew} />
         <NavbarOverlay />
         <ModalCredit cast={movie.credits.cast} crew={movie.credits.crew} title={movie.title} />
       </>

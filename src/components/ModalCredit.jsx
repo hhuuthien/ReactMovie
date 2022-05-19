@@ -7,10 +7,10 @@ class ModalCredit extends Component {
   renderCast(cast) {
     return (
       <div className="mc-cast">
-        <div style={{ fontWeight: "bold", fontSize: "1.4rem" }}>
-          Cast
-          <span style={{ marginLeft: 4 }}> ({cast.length})</span>
-        </div>
+        <h3 style={{ fontWeight: "bold" }}>
+          CASTS
+          <span style={{ marginLeft: 20, fontSize: "1.1rem" }}>{cast.length}</span>
+        </h3>
 
         <div className="mc-cast-list">
           {cast.map((cast, index) => (
@@ -24,10 +24,10 @@ class ModalCredit extends Component {
   renderCrew(crew) {
     return (
       <div className="mc-crew">
-        <div style={{ fontWeight: "bold", fontSize: "1.4rem" }}>
-          Crew
-          <span style={{ marginLeft: 4 }}> ({crew.length})</span>
-        </div>
+        <h3 style={{ fontWeight: "bold" }}>
+          CREWS
+          <span style={{ marginLeft: 20, fontSize: "1.1rem" }}>{crew.length}</span>
+        </h3>
         <div className="mc-crew-list">
           {crew.map((crew, index) => (
             <CardCrewForModal crew={crew} key={index} />

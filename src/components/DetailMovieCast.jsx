@@ -8,7 +8,7 @@ class DetailMovieCast extends Component {
 
     return (
       <div className="dm-cast">
-        <h2 className="dm-cast-title">Casts</h2>
+        <h3 className="dm-cast-title">CASTS</h3>
         <div
           className="dm-cast-all"
           onClick={() => {
