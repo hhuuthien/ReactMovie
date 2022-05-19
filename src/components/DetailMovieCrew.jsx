@@ -1,7 +1,8 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import CardCrew from "./CardCrew";
 
-export default class DetailMovieCrew extends Component {
+class DetailMovieCrew extends Component {
   render() {
     const { crew } = this.props;
     console.log(crew);
@@ -14,6 +15,16 @@ export default class DetailMovieCrew extends Component {
     return (
       <div className="dm-crew">
         <h2 className="dm-crew-title">Crews</h2>
+        <div
+          className="dm-crew-all"
+          onClick={() => {
+            this.props.dispatch({
+              type: "SHOW_MODAL",
+            });
+          }}
+        >
+          SEE ALL
+        </div>
         <div className="dm-crew-list">
           {listOfDirectors.map((crew, index) => {
             return <CardCrew crew={crew} key={index} />;
@@ -32,3 +43,5 @@ export default class DetailMovieCrew extends Component {
     );
   }
 }
+
+export default connect()(DetailMovieCrew);

@@ -1,0 +1,61 @@
+.mc-main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 101;
+}
+
+.mc-modal {
+  position: fixed;
+  top: 50px;
+  left: 50%;
+  width: 1000px;
+  height: calc(100vh - 100px);
+  transform: translateX(-50%);
+  background-color: #111111;
+  color: whitesmoke;
+  padding: 30px;
+}
+
+.mc-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.mc-credit {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.mc-cast {
+  width: 450px;
+}
+
+.mc-crew {
+  width: 450px;
+}
+
+.mc-cast-list,
+.mc-crew-list {
+  margin-top: 30px;
+  max-height: calc(100vh - 260px);
+  overflow-y: scroll;
+}
+
+.mc-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: whitesmoke;
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mc-close:hover {
+  color: rgb(180, 180, 180);
+}

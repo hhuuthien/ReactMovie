@@ -2,6 +2,7 @@
   padding: 20px 40px;
   background-color: #111111;
   color: whitesmoke;
+  position: relative;
 }
 
 .dm-cast-list {
@@ -11,12 +12,25 @@
   overflow-y: hidden;
 }
 
+.dm-cast-all {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.dm-cast-all:hover {
+  color: rgb(180, 180, 180);
+}
+
 @media screen and (max-width: 576px) {
   .dm-cast {
     padding: 15px 20px;
   }
 
   .dm-cast-title {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 }

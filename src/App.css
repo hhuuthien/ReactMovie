@@ -19,6 +19,9 @@
 @import "./style/DetailMovieCrew.css";
 @import "./style/CardCast.css";
 @import "./style/CardCrew.css";
+@import "./style/ModalCredit.css";
+@import "./style/CardCastForModal.css";
+@import "./style/CardCrewForModal.css";
 
 @media screen and (max-width: 300px) {
   .App {
