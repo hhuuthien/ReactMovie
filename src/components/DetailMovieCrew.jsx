@@ -5,7 +5,6 @@ import CardCrew from "./CardCrew";
 class DetailMovieCrew extends Component {
   render() {
     const { crew } = this.props;
-    console.log(crew);
 
     const listOfDirectors = crew.filter((crew) => crew.job === "Director");
     const listOfProducers = crew.filter((crew) => crew.job === "Producer");

@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import DetailMovieCast from "../components/DetailMovieCast";
 import DetailMovieCrew from "../components/DetailMovieCrew";
+import DetailMovieImage from "../components/DetailMovieImage";
 import ModalCredit from "../components/ModalCredit";
 import NavbarOverlay from "../components/NavbarOverlay";
 import { API_KEY, IMG_PREFIX, LANGUAGE, PREFIX } from "../data/configData";
@@ -70,6 +71,7 @@ class DetailMoviePage extends Component {
         </div>
         <DetailMovieCast cast={movie.credits.cast} />
         <DetailMovieCrew crew={movie.credits.crew} />
+        <DetailMovieImage movieID={movie.id} />
         <NavbarOverlay />
         <ModalCredit cast={movie.credits.cast} crew={movie.credits.crew} title={movie.title} />
       </>
