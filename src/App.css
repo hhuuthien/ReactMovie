@@ -23,6 +23,7 @@
 @import "./style/CardCastForModal.css";
 @import "./style/CardCrewForModal.css";
 @import "./style/DetailMovieImage.css";
+@import "./style/SearchPage.css";
 
 @media screen and (max-width: 300px) {
   .App {
