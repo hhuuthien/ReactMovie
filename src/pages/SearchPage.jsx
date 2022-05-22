@@ -14,6 +14,7 @@ class SearchPage extends Component {
         <div className="sp-container">
           <div className="ui action input sp-search">
             <input type="text" placeholder="Search..." className="sp-input" id="sp-input" />
+            <br />
             <select className="ui compact selection dropdown sp-select">
               <option value="all">All</option>
               <option value="movies">Movies</option>
