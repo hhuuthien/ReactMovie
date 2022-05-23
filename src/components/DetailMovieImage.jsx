@@ -21,7 +21,6 @@ class DetailMovieImage extends Component {
 
   render() {
     const { movie } = this.props;
-    console.log(movie);
 
     if (!movie.images) return <></>;
 

@@ -43,6 +43,13 @@
   border-color: rgba(245, 245, 245, 0.2) !important;
 }
 
+.sp-result {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 30px 40px;
+}
+
 @media screen and (max-width: 500px) {
   .sp-select {
     display: none !important;
