@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
 import { IMG_500_PREFIX } from "../data/configData";
 
-class CardMovie extends Component {
+export default class CardMovie extends Component {
   render() {
     const { movie } = this.props;
 
@@ -24,5 +23,3 @@ class CardMovie extends Component {
     );
   }
 }
-
-export default connect()(CardMovie);
