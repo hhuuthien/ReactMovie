@@ -2,17 +2,20 @@ import React, { Component } from "react";
 import ImageGallery from "react-image-gallery";
 import { connect } from "react-redux";
 import { IMG_500_PREFIX, IMG_PREFIX } from "../data/configData";
-// import "../../node_modules/react-image-gallery/styles/css/image-gallery.css";
+import NavbarOverlay from "../components/NavbarOverlay";
 
 class MovieImageGallery extends Component {
   componentDidMount() {
     this.props.dispatch({
       type: "HIDE_NAVBAR",
     });
+
+    const { imageIndex } = this.props.match.params;
+    this._imageGallery.slideToIndex(Number(imageIndex));
   }
 
   render() {
-    const { posters } = this.props.movie.images;
+    const { posters } = this.props.images;
 
     let images = [];
     for (let poster of posters) {
@@ -24,7 +27,8 @@ class MovieImageGallery extends Component {
 
     return (
       <div className="mig-page">
-        <ImageGallery items={images} showFullscreenButton={false} showPlayButton={false} showIndex={true} />
+        <ImageGallery items={images} lazyLoad={true} showFullscreenButton={false} showPlayButton={false} ref={(i) => (this._imageGallery = i)} />
+        <NavbarOverlay />
       </div>
     );
   }
@@ -32,7 +36,7 @@ class MovieImageGallery extends Component {
 
 const mapStateToProps = (rootReducer) => {
   return {
-    movie: rootReducer.movieReducer.movieInDetail,
+    images: rootReducer.movieReducer.movieInDetail_image,
   };
 };
 

@@ -5,6 +5,7 @@ const DEFAULT_STATE = {
   movieTopRated: [],
   //
   movieInDetail: {},
+  movieInDetail_image: {},
 };
 
 export const movieReducer = (state = DEFAULT_STATE, action) => {
@@ -39,10 +40,10 @@ export const movieReducer = (state = DEFAULT_STATE, action) => {
         movieInDetail: action.data,
       };
     }
-    case "LOAD_IMAGES_AND_ADD_TO_MOVIE": {
+    case "LOAD_IMAGES": {
       return {
         ...state,
-        movieInDetail: { ...state.movieInDetail, images: action.data },
+        movieInDetail_image: action.data,
       };
     }
     default:

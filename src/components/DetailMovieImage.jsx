@@ -11,7 +11,7 @@ class DetailMovieImage extends Component {
       const { data } = await axios.get(url);
 
       this.props.dispatch({
-        type: "LOAD_IMAGES_AND_ADD_TO_MOVIE",
+        type: "LOAD_IMAGES",
         data,
       });
     } catch (error) {
@@ -20,20 +20,22 @@ class DetailMovieImage extends Component {
   }
 
   render() {
-    const { movie } = this.props;
+    const { images } = this.props;
 
-    if (!movie.images) return <></>;
+    if (!images.posters) return <></>;
 
     return (
       <div className="dm-image">
-        <h3 className="dm-image-title">IMAGES</h3>
+        <h3 className="dm-image-title">
+          IMAGES<span>POSTERS</span>
+        </h3>
         <div className="dm-image-list">
-          {movie.images.posters.map((img, index) => (
+          {images.posters.map((img, index) => (
             <div
               className="dm-image-container"
               key={index}
               onClick={() => {
-                this.props.history.push("/image");
+                this.props.history.push("/image/" + index);
               }}
             >
               <img src={`${IMG_500_PREFIX}${img.file_path}`} />
@@ -47,7 +49,7 @@ class DetailMovieImage extends Component {
 
 const mapStateToProps = (rootReducer) => {
   return {
-    movie: rootReducer.movieReducer.movieInDetail,
+    images: rootReducer.movieReducer.movieInDetail_image,
   };
 };
 

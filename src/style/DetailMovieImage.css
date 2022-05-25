@@ -9,6 +9,10 @@
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   gap: 10px;
+  max-height: 500px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding-right: 10px;
 }
 
 .dm-image-container {
@@ -24,6 +28,13 @@
   display: block;
   object-fit: cover;
   object-position: center;
+}
+
+.dm-image-title span {
+  color: #e14b4b;
+  font-size: 1.1rem;
+  display: inline-block;
+  margin-left: 20px;
 }
 
 @media screen and (max-width: 992px) {
