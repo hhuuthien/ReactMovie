@@ -15,22 +15,41 @@ class MovieImageGallery extends Component {
   }
 
   render() {
-    const { posters } = this.props.images;
+    const { type } = this.props.match.params;
 
-    let images = [];
-    for (let poster of posters) {
-      images.push({
-        original: `${IMG_PREFIX}${poster.file_path}`,
-        thumbnail: `${IMG_500_PREFIX}${poster.file_path}`,
-      });
+    if (type === "1") {
+      const { posters } = this.props.images;
+      let imagesPosters = [];
+      for (let poster of posters) {
+        imagesPosters.push({
+          original: `${IMG_PREFIX}${poster.file_path}`,
+          thumbnail: `${IMG_500_PREFIX}${poster.file_path}`,
+        });
+      }
+
+      return (
+        <div className="mig-page">
+          <ImageGallery items={imagesPosters} lazyLoad={true} showFullscreenButton={false} showPlayButton={false} ref={(i) => (this._imageGallery = i)} />
+          <NavbarOverlay />
+        </div>
+      );
+    } else if (type === "2") {
+      const { backdrops } = this.props.images;
+      let imagesBackdrops = [];
+      for (let backdrop of backdrops) {
+        imagesBackdrops.push({
+          original: `${IMG_PREFIX}${backdrop.file_path}`,
+          thumbnail: `${IMG_500_PREFIX}${backdrop.file_path}`,
+        });
+      }
+
+      return (
+        <div className="mig-page">
+          <ImageGallery items={imagesBackdrops} lazyLoad={true} showFullscreenButton={false} showPlayButton={false} ref={(i) => (this._imageGallery = i)} />
+          <NavbarOverlay />
+        </div>
+      );
     }
-
-    return (
-      <div className="mig-page">
-        <ImageGallery items={images} lazyLoad={true} showFullscreenButton={false} showPlayButton={false} ref={(i) => (this._imageGallery = i)} />
-        <NavbarOverlay />
-      </div>
-    );
   }
 }
 

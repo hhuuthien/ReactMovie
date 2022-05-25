@@ -1,0 +1,27 @@
+.dm-image-list2 {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  max-height: 400px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding-right: 10px;
+}
+
+@media screen and (max-width: 992px) {
+  .dm-image-list2 {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .dm-image-list2 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .dm-image {
+    padding: 15px 20px;
+  }
+}

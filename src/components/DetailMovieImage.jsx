@@ -35,7 +35,7 @@ class DetailMovieImage extends Component {
               className="dm-image-container"
               key={index}
               onClick={() => {
-                this.props.history.push("/image/" + index);
+                this.props.history.push("/image/1/" + index);
               }}
             >
               <img src={`${IMG_500_PREFIX}${img.file_path}`} />

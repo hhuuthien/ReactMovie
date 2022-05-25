@@ -18,7 +18,7 @@ function App() {
             <Route exact path={"/home"} component={HomePage} />
             <Route exact path={"/movie/:movieID"} component={DetailMoviePage} />
             <Route exact path={"/search"} component={SearchPage} />
-            <Route exact path={"/image/:imageIndex"} component={MovieImageGallery} />
+            <Route exact path={"/image/:type/:imageIndex"} component={MovieImageGallery} />
             <Route exact path={"/"} render={() => <Redirect to="/home" />} />
           </Switch>
         </div>
