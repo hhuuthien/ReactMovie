@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Topbar from "./components/Topbar";
 import DetailMoviePage from "./pages/DetailMoviePage";
 import HomePage from "./pages/HomePage";
+import MovieImageGallery from "./pages/MovieImageGalleryPage";
 import SearchPage from "./pages/SearchPage";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
             <Route exact path={"/home"} component={HomePage} />
             <Route exact path={"/movie/:movieID"} component={DetailMoviePage} />
             <Route exact path={"/search"} component={SearchPage} />
+            <Route exact path={"/image"} component={MovieImageGallery} />
             <Route exact path={"/"} render={() => <Redirect to="/home" />} />
           </Switch>
         </div>

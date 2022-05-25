@@ -24,14 +24,18 @@ class DetailMovieImage extends Component {
 
     if (!movie.images) return <></>;
 
-    // https://www.npmjs.com/package/react-image-gallery
-
     return (
       <div className="dm-image">
         <h3 className="dm-image-title">IMAGES</h3>
         <div className="dm-image-list">
           {movie.images.posters.map((img, index) => (
-            <div className="dm-image-container" key={index}>
+            <div
+              className="dm-image-container"
+              key={index}
+              onClick={() => {
+                this.props.history.push("/image");
+              }}
+            >
               <img src={`${IMG_500_PREFIX}${img.file_path}`} />
             </div>
           ))}

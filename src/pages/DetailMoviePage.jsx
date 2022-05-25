@@ -71,7 +71,7 @@ class DetailMoviePage extends Component {
         </div>
         <DetailMovieCast cast={movie.credits.cast} />
         <DetailMovieCrew crew={movie.credits.crew} />
-        <DetailMovieImage movieID={movie.id} />
+        <DetailMovieImage movieID={movie.id} history={this.props.history} />
         <NavbarOverlay />
         <ModalCredit cast={movie.credits.cast} crew={movie.credits.crew} title={movie.title} />
       </>

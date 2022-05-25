@@ -25,6 +25,8 @@
 @import "./style/DetailMovieImage.css";
 @import "./style/SearchPage.css";
 @import "./style/CardMovieHorizontal.css";
+@import "./style/MovieImageGalleryPage.css";
+@import "./style/ImageGallery.css";
 
 @media screen and (max-width: 300px) {
   .App {
