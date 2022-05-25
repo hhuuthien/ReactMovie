@@ -1,5 +1,6 @@
 const DEFAULT_STATE = {
   result: [],
+  keyword: null,
 };
 
 export const searchReducer = (state = DEFAULT_STATE, action) => {
@@ -8,6 +9,7 @@ export const searchReducer = (state = DEFAULT_STATE, action) => {
       return {
         ...state,
         result: action.data,
+        keyword: action.keyword,
       };
     }
     default:

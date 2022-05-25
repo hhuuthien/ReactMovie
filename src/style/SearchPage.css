@@ -6,7 +6,7 @@
   transition: all 0.3s ease;
   position: relative;
   color: whitesmoke;
-  min-height: 800px;
+  min-height: 100vh;
 }
 
 .sp-container {
@@ -50,11 +50,12 @@
   padding: 30px 40px;
 }
 
-@media screen and (max-width: 500px) {
-  .sp-select {
-    display: none !important;
-  }
+.sp-result-empty {
+  margin-top: 20px;
+  text-align: center;
+}
 
+@media screen and (max-width: 500px) {
   .sp-container {
     margin-top: 10px;
     padding: 0 10px;
