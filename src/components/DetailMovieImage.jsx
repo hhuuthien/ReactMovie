@@ -29,19 +29,23 @@ class DetailMovieImage extends Component {
         <h3 className="dm-image-title">
           IMAGES<span>POSTERS</span>
         </h3>
-        <div className="dm-image-list">
-          {images.posters.map((img, index) => (
-            <div
-              className="dm-image-container"
-              key={index}
-              onClick={() => {
-                this.props.history.push("/image/1/" + index);
-              }}
-            >
-              <img src={`${IMG_500_PREFIX}${img.file_path}`} />
-            </div>
-          ))}
-        </div>
+        {!images.posters || images.posters.length === 0 ? (
+          <div>This movie has no posters</div>
+        ) : (
+          <div className="dm-image-list">
+            {images.posters.map((img, index) => (
+              <div
+                className="dm-image-container"
+                key={index}
+                onClick={() => {
+                  this.props.history.push("/image/1/" + index);
+                }}
+              >
+                <img src={`${IMG_500_PREFIX}${img.file_path}`} />
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     );
   }

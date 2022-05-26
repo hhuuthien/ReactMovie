@@ -13,19 +13,23 @@ class DetailMovieImage2 extends Component {
         <h3 className="dm-image-title">
           IMAGES<span>BACKDROPS</span>
         </h3>
-        <div className="dm-image-list2">
-          {images.backdrops.map((img, index) => (
-            <div
-              className="dm-image-container"
-              key={index}
-              onClick={() => {
-                this.props.history.push("/image/2/" + index);
-              }}
-            >
-              <img src={`${IMG_500_PREFIX}${img.file_path}`} />
-            </div>
-          ))}
-        </div>
+        {!images.backdrops || images.backdrops.length === 0 ? (
+          <div>This movie has no backdrops</div>
+        ) : (
+          <div className="dm-image-list2">
+            {images.backdrops.map((img, index) => (
+              <div
+                className="dm-image-container"
+                key={index}
+                onClick={() => {
+                  this.props.history.push("/image/2/" + index);
+                }}
+              >
+                <img src={`${IMG_500_PREFIX}${img.file_path}`} />
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     );
   }

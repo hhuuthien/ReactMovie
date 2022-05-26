@@ -45,6 +45,7 @@ class SearchPage extends Component {
           <div className="sp-container">
             <div className="ui action input sp-search">
               <input
+                autocomplete="off"
                 type="text"
                 placeholder="Search..."
                 className="sp-input"

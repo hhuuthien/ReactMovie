@@ -24,7 +24,15 @@ class RelatedMovie extends Component {
   render() {
     const { relatedMovies } = this.props;
 
-    if (!relatedMovies || relatedMovies.length === 0) return <></>;
+    if (!relatedMovies || relatedMovies.length === 0) {
+      return (
+        <div className="related-movie">
+          <h3 className="rm-title">recommendations for you</h3>
+          <div>We have currently not found any recommendations for you yet</div>
+        </div>
+      );
+    }
+
     return (
       <div className="related-movie">
         <h3 className="rm-title">recommendations for you</h3>

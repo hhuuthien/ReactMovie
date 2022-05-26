@@ -16,21 +16,15 @@ class Navbar extends Component {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/discovery">
-                <i className="fa-solid fa-compass"></i>
-                <p>Discovery</p>
-              </NavLink>
-            </li>
-            <li>
               <NavLink to="/search">
                 <i className="fa-solid fa-magnifying-glass"></i>
                 <p>Search</p>
               </NavLink>
             </li>
             <li>
-              <NavLink to="/coming-soon">
-                <i className="fa-solid fa-clock"></i>
-                <p>Coming soon</p>
+              <NavLink to="/discovery">
+                <i className="fa-solid fa-compass"></i>
+                <p>Discovery</p>
               </NavLink>
             </li>
           </ul>
@@ -51,21 +45,9 @@ class Navbar extends Component {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/bookmarks">
-                <i className="fa-solid fa-bookmark"></i>
-                <p>Bookmarks</p>
-              </NavLink>
-            </li>
-            <li>
               <NavLink to="/history">
                 <i className="fa-solid fa-history"></i>
                 <p>History</p>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/log-out">
-                <i className="fa-solid fa-right-from-bracket"></i>
-                <p>Log out</p>
               </NavLink>
             </li>
           </ul>
