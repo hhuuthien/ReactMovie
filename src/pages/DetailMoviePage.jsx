@@ -7,6 +7,7 @@ import DetailMovieImage from "../components/DetailMovieImage";
 import DetailMovieImage2 from "../components/DetailMovieImage2";
 import ModalCredit from "../components/ModalCredit";
 import NavbarOverlay from "../components/NavbarOverlay";
+import TrailerPlayer from "../components/TrailerPlayer";
 import { API_KEY, IMG_PREFIX, LANGUAGE, PREFIX } from "../data/configData";
 import { findGenreByID } from "../function/findGenreByID";
 import { formatDate } from "../function/formatDate";
@@ -25,6 +26,20 @@ class DetailMoviePage extends Component {
 
       this.props.dispatch({
         type: "LOAD_DETAIL_MOVIE",
+        data,
+      });
+    } catch (error) {
+      console.log(error.response.data);
+    }
+  }
+
+  async getTrailers(movieID) {
+    const url = `${PREFIX}/movie/${movieID}/videos?api_key=${API_KEY}&language=${LANGUAGE}`;
+    try {
+      const { data } = await axios.get(url);
+
+      this.props.dispatch({
+        type: "LOAD_VIDEOS",
         data,
       });
     } catch (error) {
@@ -66,10 +81,22 @@ class DetailMoviePage extends Component {
                   })}
                 </div>
                 <div className="dm-overview">{movie.overview}</div>
+                <button
+                  id="dm-trailer"
+                  className="ui primary button dm-trailer"
+                  onClick={() => {
+                    this.getTrailers(movie.id);
+                    document.getElementById("dm-trailer").scrollIntoView({ behavior: "smooth" });
+                  }}
+                >
+                  <i className="fa-solid fa-circle-play"></i>
+                  <div>Trailer</div>
+                </button>
               </div>
             </div>
           </div>
         </div>
+        <TrailerPlayer movieID={movie.id} />
         <DetailMovieCast cast={movie.credits.cast} />
         <DetailMovieCrew crew={movie.credits.crew} />
         <DetailMovieImage movieID={movie.id} history={this.props.history} />

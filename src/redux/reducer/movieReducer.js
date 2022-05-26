@@ -6,6 +6,7 @@ const DEFAULT_STATE = {
   //
   movieInDetail: {},
   movieInDetail_image: {},
+  movieInDetail_video: {},
 };
 
 export const movieReducer = (state = DEFAULT_STATE, action) => {
@@ -44,6 +45,12 @@ export const movieReducer = (state = DEFAULT_STATE, action) => {
       return {
         ...state,
         movieInDetail_image: action.data,
+      };
+    }
+    case "LOAD_VIDEOS": {
+      return {
+        ...state,
+        movieInDetail_video: action.data,
       };
     }
     default:

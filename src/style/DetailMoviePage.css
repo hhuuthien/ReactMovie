@@ -93,6 +93,22 @@
   color: whitesmoke;
 }
 
+.dm-trailer {
+  margin-top: 14px !important;
+  background-color: #e14b4b !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.dm-trailer i {
+  display: inline-block;
+  margin-right: 8px;
+  font-size: 1.5rem;
+  animation: heartBeat;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
 @media screen and (max-width: 992px) {
   .dm-backdrop {
     height: 455px;
@@ -127,6 +143,10 @@
 
   .dm-info .dm-title {
     font-size: 2.1rem;
+  }
+
+  .dm-trailer i {
+    font-size: 1.3rem;
   }
 }
 
@@ -189,6 +209,14 @@
   }
 
   .dm-info .dm-overview {
+    font-size: 0.9rem;
+  }
+
+  .dm-trailer i {
+    font-size: 1.1rem;
+  }
+
+  .dm-trailer div {
     font-size: 0.9rem;
   }
 }
@@ -259,5 +287,12 @@
 
   .dm-info .dm-genre .label {
     font-size: 0.8rem;
+  }
+
+  .dm-trailer i {
+    font-size: 1rem;
+    animation: unset;
+    animation-duration: unset;
+    animation-iteration-count: unset;
   }
 }

@@ -20,6 +20,7 @@
   height: auto;
   border-radius: 10px;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .dm-image-container > img {
@@ -28,6 +29,11 @@
   display: block;
   object-fit: cover;
   object-position: center;
+  transition: all 0.3s ease;
+}
+
+.dm-image-container:hover > img {
+  transform: scale(1.1);
 }
 
 .dm-image-title span {

@@ -8,6 +8,7 @@
   position: relative;
 }
 
+@import "animate.css";
 @import "./style/Topbar.css";
 @import "./style/Navbar.css";
 @import "./style/HomePage.css";
@@ -28,6 +29,7 @@
 @import "./style/CardMovieHorizontal.css";
 @import "./style/MovieImageGalleryPage.css";
 @import "./style/ImageGallery.css";
+@import "./style/TrailerPlayer.css";
 
 @media screen and (max-width: 300px) {
   .App {
