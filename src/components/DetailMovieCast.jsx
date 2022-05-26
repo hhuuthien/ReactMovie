@@ -22,7 +22,7 @@ class DetailMovieCast extends Component {
         </div>
         <div className="dm-cast-list">
           {cast.map((cast, index) => {
-            return <CardCast cast={cast} key={index} />;
+            return <CardCast cast={cast} key={index} history={this.props.history} />;
           })}
         </div>
       </div>

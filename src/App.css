@@ -31,6 +31,7 @@
 @import "./style/ImageGallery.css";
 @import "./style/TrailerPlayer.css";
 @import "./style/RelatedMovie.css";
+@import "./style/DetailPeoplePage.css";
 
 @media screen and (max-width: 300px) {
   .App {

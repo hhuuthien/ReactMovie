@@ -101,7 +101,7 @@ class DetailMoviePage extends Component {
           </div>
         </div>
         <TrailerPlayer movieID={movie.id} />
-        <DetailMovieCast cast={movie.credits.cast} />
+        <DetailMovieCast cast={movie.credits.cast} history={this.props.history} />
         <DetailMovieCrew crew={movie.credits.crew} />
         <DetailMovieImage movieID={movie.id} history={this.props.history} />
         <DetailMovieImage2 history={this.props.history} />
