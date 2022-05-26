@@ -1,0 +1,23 @@
+.related-movie {
+  padding: 20px 40px;
+  background-color: #111111;
+  color: whitesmoke;
+  position: relative;
+}
+
+.rm-title {
+  text-transform: uppercase;
+}
+
+.rm-list {
+  display: flex;
+  max-width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+@media screen and (max-width: 576px) {
+  .related-movie {
+    padding: 15px 20px;
+  }
+}

@@ -7,6 +7,7 @@ import DetailMovieImage from "../components/DetailMovieImage";
 import DetailMovieImage2 from "../components/DetailMovieImage2";
 import ModalCredit from "../components/ModalCredit";
 import NavbarOverlay from "../components/NavbarOverlay";
+import RelatedMovie from "../components/RelatedMovie";
 import TrailerPlayer from "../components/TrailerPlayer";
 import { API_KEY, IMG_PREFIX, LANGUAGE, PREFIX } from "../data/configData";
 import { findGenreByID } from "../function/findGenreByID";
@@ -14,11 +15,7 @@ import { formatDate } from "../function/formatDate";
 import { formatRuntime } from "../function/formatRuntime";
 
 class DetailMoviePage extends Component {
-  async componentDidMount() {
-    this.props.dispatch({
-      type: "HIDE_NAVBAR",
-    });
-
+  callAPI = async () => {
     const { movieID } = this.props.match.params;
     const url = `${PREFIX}/movie/${movieID}?api_key=${API_KEY}&language=${LANGUAGE}&append_to_response=credits`;
     try {
@@ -31,6 +28,12 @@ class DetailMoviePage extends Component {
     } catch (error) {
       console.log(error.response.data);
     }
+  };
+
+  componentDidMount() {
+    this.props.dispatch({
+      type: "HIDE_NAVBAR",
+    });
   }
 
   async getTrailers(movieID) {
@@ -51,6 +54,7 @@ class DetailMoviePage extends Component {
     const { movie } = this.props;
 
     if (Number(this.props.match.params.movieID) !== movie.id) {
+      this.callAPI();
       return <></>;
     }
 
@@ -101,6 +105,7 @@ class DetailMoviePage extends Component {
         <DetailMovieCrew crew={movie.credits.crew} />
         <DetailMovieImage movieID={movie.id} history={this.props.history} />
         <DetailMovieImage2 history={this.props.history} />
+        <RelatedMovie movieID={movie.id} history={this.props.history} />
         <NavbarOverlay />
         <ModalCredit cast={movie.credits.cast} crew={movie.credits.crew} title={movie.title} />
       </>

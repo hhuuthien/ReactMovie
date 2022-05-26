@@ -7,6 +7,7 @@ const DEFAULT_STATE = {
   movieInDetail: {},
   movieInDetail_image: {},
   movieInDetail_video: {},
+  movieInDetail_related: [],
 };
 
 export const movieReducer = (state = DEFAULT_STATE, action) => {
@@ -51,6 +52,12 @@ export const movieReducer = (state = DEFAULT_STATE, action) => {
       return {
         ...state,
         movieInDetail_video: action.data,
+      };
+    }
+    case "LOAD_RECOMMENDATIONS": {
+      return {
+        ...state,
+        movieInDetail_related: action.data,
       };
     }
     default:
