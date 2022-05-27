@@ -1,13 +1,14 @@
 import axios from "axios";
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import DetailPeopleMovie from "../components/DetailPeopleMovie";
 import { API_KEY, IMG_PREFIX, LANGUAGE, PREFIX } from "../data/configData";
 import { formatDate } from "../function/formatDate";
 
 class DetailPeoplePage extends Component {
   callAPI = async () => {
     const { peopleID } = this.props.match.params;
-    const url = `${PREFIX}/person/${peopleID}?api_key=${API_KEY}&language=${LANGUAGE}`;
+    const url = `${PREFIX}/person/${peopleID}?api_key=${API_KEY}&language=${LANGUAGE}&append_to_response=movie_credits`;
     try {
       const { data } = await axios.get(url);
 
@@ -53,6 +54,7 @@ class DetailPeoplePage extends Component {
           <h3 className="dp-biography-title">BIOGRAPHY</h3>
           <div>{person.biography || "No information"}</div>
         </div>
+        <DetailPeopleMovie person={person} />
       </div>
     );
   }
