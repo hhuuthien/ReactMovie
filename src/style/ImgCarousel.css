@@ -1,0 +1,53 @@
+.imgcarousel-main {
+  width: 100%;
+  height: 450px;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.imgcarousel-main .react-3d-carousel .slider-container .slider-content .slider-single .slider-single-content img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  object-position: top;
+}
+
+@media screen and (max-width: 992px) {
+  .imgcarousel-main {
+    height: 400px;
+  }
+
+  .imgcarousel-main .react-3d-carousel .slider-container .slider-content .slider-single .slider-single-content img {
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .imgcarousel-main {
+    height: 300px;
+  }
+
+  .imgcarousel-main .react-3d-carousel .slider-container .slider-content .slider-single .slider-single-content img {
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .imgcarousel-main {
+    height: 200px;
+  }
+
+  .imgcarousel-main .react-3d-carousel .slider-container .slider-content .slider-single .slider-single-content img {
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .imgcarousel-main {
+    height: 150px;
+  }
+
+  .imgcarousel-main .react-3d-carousel .slider-container .slider-content .slider-single .slider-single-content img {
+    height: 150px;
+  }
+}

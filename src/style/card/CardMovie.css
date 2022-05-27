@@ -1,0 +1,95 @@
+.cardmovie-main {
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.cardmovie-main:last-child {
+  margin-right: 0;
+}
+
+.cardmovie-main .poster {
+  width: 200px;
+  height: 300px;
+}
+
+.cardmovie-main .poster > img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transition: all 0.2s ease;
+}
+
+.cardmovie-main .title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 10px 0;
+  transition: all 0.2s ease;
+}
+
+.cardmovie-main .content {
+  position: relative;
+}
+
+.cardmovie-main .float {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  align-items: center;
+  background-color: rgba(245, 245, 245, 0.75);
+  padding: 3px 6px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.cardmovie-main .float i {
+  color: #feb139;
+  margin-right: 4px;
+  font-size: 0.9rem;
+}
+
+.cardmovie-main .float div {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.cardmovie-main:hover img {
+  transform: scale(0.95);
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.cardmovie-main:hover .title {
+  color: #143f6b;
+}
+
+.cardmovie-main:hover .float {
+  top: 20px;
+  left: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  .cardmovie-main .poster {
+    width: 150px;
+    height: 225px;
+  }
+
+  .cardmovie-main .title {
+    font-size: 1rem;
+  }
+
+  .cardmovie-main .float i {
+    font-size: 0.8rem;
+  }
+
+  .cardmovie-main .float div {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .cardmovie-main .title {
+    font-size: 0.9rem;
+  }
+}

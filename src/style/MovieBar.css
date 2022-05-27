@@ -1,0 +1,18 @@
+.moviebar-list {
+  display: flex;
+  max-width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.moviebar-title {
+  margin-bottom: 14px;
+}
+
+.moviebar-title h3 {
+  color: #143f6b !important;
+}
+
+.moviebar-main {
+  margin-bottom: 40px;
+}

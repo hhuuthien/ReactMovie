@@ -8,8 +8,23 @@
   position: relative;
 }
 
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
 @media screen and (max-width: 279px) {
   .app {
     display: none;
   }
 }
+
+@import "./style/Navbar.css";
+@import "./style/ImgCarousel.css";
+@import "./style/MovieBar.css";
+
+@import "./style/card/CardMovie.css";
+
+@import "./style/pages/HomePage.css";
