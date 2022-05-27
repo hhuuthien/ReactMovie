@@ -4,38 +4,12 @@
   box-sizing: border-box;
 }
 
-.App {
+.app {
   position: relative;
 }
 
-@import "animate.css";
-@import "./style/Topbar.css";
-@import "./style/Navbar.css";
-@import "./style/HomePage.css";
-@import "./style/CardMovie.css";
-@import "./style/Movie.css";
-@import "./style/DetailMoviePage.css";
-@import "./style/NavbarOverlay.css";
-@import "./style/DetailMovieCast.css";
-@import "./style/DetailMovieCrew.css";
-@import "./style/CardCast.css";
-@import "./style/CardCrew.css";
-@import "./style/ModalCredit.css";
-@import "./style/CardCastForModal.css";
-@import "./style/CardCrewForModal.css";
-@import "./style/DetailMovieImage.css";
-@import "./style/DetailMovieImage2.css";
-@import "./style/SearchPage.css";
-@import "./style/CardMovieHorizontal.css";
-@import "./style/MovieImageGalleryPage.css";
-@import "./style/ImageGallery.css";
-@import "./style/TrailerPlayer.css";
-@import "./style/RelatedMovie.css";
-@import "./style/DetailPeoplePage.css";
-@import "./style/DetailPeopleMovie.css";
-
-@media screen and (max-width: 300px) {
-  .App {
+@media screen and (max-width: 279px) {
+  .app {
     display: none;
   }
 }
