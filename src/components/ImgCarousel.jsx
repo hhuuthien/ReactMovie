@@ -15,7 +15,7 @@ export default class ImgCarousel extends Component {
 
     return (
       <div className="imgcarousel-main">
-        <Carousel slides={slides} autoplay={true} arrows={false} />
+        <Carousel slides={slides} autoplay={true} arrows={false} interval={10000} />
       </div>
     );
   }

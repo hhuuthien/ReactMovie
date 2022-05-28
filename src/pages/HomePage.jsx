@@ -7,13 +7,13 @@ import { API_KEY, LANGUAGE, PREFIX, REGION } from "../data/configData";
 
 class HomePage extends Component {
   render() {
-    const { movieNowPlaying, moviePopular } = this.props;
+    const { movieNowPlaying, moviePopular, numPages1, numPages2 } = this.props;
 
     return (
       <div className="homepage-main">
         <ImageCarousel movieList={moviePopular} />
-        <MovieBar movieList={movieNowPlaying} title="MOVIES NOW PLAYING" />
-        <MovieBar movieList={moviePopular} title="POPULAR MOVIES" />
+        <MovieBar movieList={movieNowPlaying} title="MOVIES NOW PLAYING" numPages={numPages1} />
+        <MovieBar movieList={moviePopular} title="POPULAR MOVIES" numPages={numPages2} />
       </div>
     );
   }
@@ -49,7 +49,9 @@ class HomePage extends Component {
 const mapStateToProps = (rootReducer) => {
   return {
     movieNowPlaying: rootReducer.movieReducer.movieNowPlaying,
+    numPages1: rootReducer.movieReducer.movieNowPlaying_totalPages,
     moviePopular: rootReducer.movieReducer.moviePopular,
+    numPages2: rootReducer.movieReducer.moviePopular_totalPages,
   };
 };
 
