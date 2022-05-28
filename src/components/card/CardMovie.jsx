@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { IMG_500_PREFIX } from "../../data/configData";
-import { formatDate } from "../../function/formatDate";
+import CustomImage from "../CustomImage";
 
 class CardMovie extends Component {
   render() {
@@ -9,13 +9,13 @@ class CardMovie extends Component {
       <div className="cardmovie-main">
         <div className="content">
           <div className="poster">
-            <img src={`${IMG_500_PREFIX}${movie.poster_path}`} />
+            <CustomImage prefix={IMG_500_PREFIX} sublink={movie.poster_path} placeholderSrc="./img/placeholder.png" />
           </div>
-          <div className="title">{movie.title}</div>
+          <div className="title">{movie.title || ""}</div>
           {movie.vote_count !== 0 ? (
             <div className="float">
               <i className="fa-solid fa-star star"></i>
-              <div className="point">{movie.vote_average}</div>
+              <div className="point">{movie.vote_average || ""}</div>
             </div>
           ) : (
             <></>

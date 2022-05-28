@@ -21,6 +21,48 @@
   }
 }
 
+/* Custom scrollbar of .moviebar-list */
+
+.moviebar-list::-webkit-scrollbar {
+  height: 10px;
+}
+
+.moviebar-list::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: rgb(250, 250, 250);
+}
+
+.moviebar-list::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgb(236, 236, 236);
+}
+
+.moviebar-list::-webkit-scrollbar-thumb:hover {
+  border-radius: 10px;
+  background: rgb(200, 200, 200);
+}
+
+/* Custom scrollbar */
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: rgb(225, 225, 225);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgb(200, 200, 200);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  border-radius: 10px;
+  background: rgb(170, 170, 170);
+}
+
 @import "./style/Navbar.css";
 @import "./style/ImgCarousel.css";
 @import "./style/MovieBar.css";
