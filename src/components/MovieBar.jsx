@@ -22,6 +22,12 @@ export default class MovieBar extends Component {
                 case "POPULAR MOVIES":
                   this.props.history.push("/list/l2");
                   break;
+                case "COMING SOON":
+                  this.props.history.push("/list/l3");
+                  break;
+                case "TOP RATED MOVIES":
+                  this.props.history.push("/list/l4");
+                  break;
                 default:
                   break;
               }

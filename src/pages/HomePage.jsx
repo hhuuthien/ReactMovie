@@ -6,13 +6,15 @@ import { API_KEY, LANGUAGE, PREFIX, REGION } from "../data/configData";
 
 class HomePage extends Component {
   render() {
-    const { movieNowPlaying, moviePopular, numPages1, numPages2 } = this.props;
+    const { movieNowPlaying, moviePopular, movieUpComing, movieTopRated, numPages1, numPages2, numPages3, numPages4 } = this.props;
 
     return (
       <div className="homepage-main">
         {/* <ImageCarousel movieList={moviePopular} /> */}
         <MovieBar movieList={movieNowPlaying} title="MOVIES NOW PLAYING" numPages={numPages1} history={this.props.history} />
         <MovieBar movieList={moviePopular} title="POPULAR MOVIES" numPages={numPages2} history={this.props.history} />
+        <MovieBar movieList={movieUpComing} title="COMING SOON" numPages={numPages3} history={this.props.history} />
+        <MovieBar movieList={movieTopRated} title="TOP RATED MOVIES" numPages={numPages4} history={this.props.history} />
       </div>
     );
   }
@@ -21,9 +23,11 @@ class HomePage extends Component {
     try {
       const one = axios.get(`${PREFIX}/movie/now_playing?api_key=${API_KEY}&language=${LANGUAGE}&region=${REGION}&page=1`);
       const two = axios.get(`${PREFIX}/movie/popular?api_key=${API_KEY}&language=${LANGUAGE}&region=${REGION}&page=1`);
+      const three = axios.get(`${PREFIX}/movie/upcoming?api_key=${API_KEY}&language=${LANGUAGE}&region=${REGION}&page=1`);
+      const four = axios.get(`${PREFIX}/movie/top_rated?api_key=${API_KEY}&language=${LANGUAGE}&region=${REGION}&page=1`);
 
       await axios
-        .all([one, two])
+        .all([one, two, three, four])
         .then(
           axios.spread((...responses) => {
             this.props.dispatch({
@@ -51,6 +55,10 @@ const mapStateToProps = (rootReducer) => {
     numPages1: rootReducer.movieReducer.movieNowPlaying_totalPages,
     moviePopular: rootReducer.movieReducer.moviePopular,
     numPages2: rootReducer.movieReducer.moviePopular_totalPages,
+    movieUpComing: rootReducer.movieReducer.movieUpComing,
+    numPages3: rootReducer.movieReducer.movieUpComing_totalPages,
+    movieTopRated: rootReducer.movieReducer.movieTopRated,
+    numPages4: rootReducer.movieReducer.movieTopRated_totalPages,
   };
 };
 

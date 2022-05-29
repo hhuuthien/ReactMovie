@@ -23,6 +23,10 @@ class MovieListPage extends Component {
         url = `${PREFIX}/movie/now_playing?api_key=${API_KEY}&language=${LANGUAGE}&region=${REGION}&page=${page}`;
       } else if (listType === "l2") {
         url = `${PREFIX}/movie/popular?api_key=${API_KEY}&language=${LANGUAGE}&region=${REGION}&page=${page}`;
+      } else if (listType === "l3") {
+        url = `${PREFIX}/movie/upcoming?api_key=${API_KEY}&language=${LANGUAGE}&region=${REGION}&page=${page}`;
+      } else if (listType === "l4") {
+        url = `${PREFIX}/movie/top_rated?api_key=${API_KEY}&language=${LANGUAGE}&region=${REGION}&page=${page}`;
       }
 
       const response = await axios.get(url);
@@ -37,7 +41,7 @@ class MovieListPage extends Component {
   };
 
   render() {
-    const { movieNowPlaying, moviePopular, numPages1, numPages2, movieLoadMorePages } = this.props;
+    const { movieNowPlaying, moviePopular, movieUpComing, movieTopRated, numPages1, numPages2, numPages3, numPages4, movieLoadMorePages } = this.props;
     const { listType } = this.props.match.params;
 
     if (movieNowPlaying.length === 0) return <Redirect to="/" />;
@@ -53,6 +57,14 @@ class MovieListPage extends Component {
       movieList = moviePopular;
       title = "POPULAR MOVIE";
       numPages = numPages2;
+    } else if (listType === "l3") {
+      movieList = movieUpComing;
+      title = "COMING SOON";
+      numPages = numPages3;
+    } else if (listType === "l4") {
+      movieList = movieTopRated;
+      title = "TOP RATED MOVIES";
+      numPages = numPages4;
     }
 
     return (
@@ -81,6 +93,10 @@ const mapStateToProps = (root) => {
     moviePopular: root.movieReducer.moviePopular,
     numPages1: root.movieReducer.movieNowPlaying_totalPages,
     numPages2: root.movieReducer.moviePopular_totalPages,
+    movieUpComing: root.movieReducer.movieUpComing,
+    movieTopRated: root.movieReducer.movieTopRated,
+    numPages3: root.movieReducer.movieUpComing_totalPages,
+    numPages4: root.movieReducer.movieTopRated_totalPages,
     movieLoadMorePages: root.movieReducer.movieLoadMorePages,
   };
 };
