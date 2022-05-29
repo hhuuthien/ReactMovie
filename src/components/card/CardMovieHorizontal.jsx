@@ -25,7 +25,7 @@ class CardMovieHorizontal extends Component {
               )}
               <div className="title">{movie.title || ""}</div>
             </div>
-            <div className="date">Release date: {formatDate(movie.release_date)}</div>
+            <div className="date">{formatDate(movie.release_date)}</div>
             <div className="overview">{movie.overview || ""}</div>
           </div>
         </div>

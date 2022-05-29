@@ -28,7 +28,7 @@
   padding: 0 15px;
 }
 
-@media screen and (max-width: 279px) {
+@media screen and (max-width: 300px) {
   .app {
     display: none;
   }
@@ -62,3 +62,4 @@
 @import "./style/card/CardMovieHorizontal.css";
 
 @import "./style/pages/HomePage.css";
+@import "./style/pages/MovieListPage.css";

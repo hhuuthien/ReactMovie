@@ -1,0 +1,29 @@
+.movielistpage-main {
+  padding: 25px 0;
+}
+
+.movielistpage-main .movie-title {
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.movielistpage-main .movie-title h3 {
+  color: #143f6b;
+  margin: 0 !important;
+}
+
+@media screen and (max-width: 576px) {
+  .movielistpage-main .movie-title {
+    display: block;
+  }
+
+  .movielistpage-main .movie-title h3 {
+    margin-bottom: 10px !important;
+  }
+
+  .movielistpage-main .movie-title div.div1 {
+    text-align: right;
+  }
+}

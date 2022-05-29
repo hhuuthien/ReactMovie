@@ -1,6 +1,7 @@
 .cardmovie-horizontal-main {
   margin-bottom: 15px;
   cursor: pointer;
+  background-color: white;
 }
 
 .cardmovie-horizontal-main:last-child {
@@ -31,7 +32,7 @@
 }
 
 .cardmovie-horizontal-main .info {
-  padding: 12px 15px;
+  padding: 5px 15px;
   width: 100%;
 }
 
@@ -91,22 +92,40 @@
   color: #143f6b;
 }
 
-@media screen and (max-width: 768px) {
-  .cardmovie-horizontal-main .title {
-    font-size: 1.1rem;
+@media screen and (max-width: 576px) {
+  .cardmovie-horizontal-main .float i {
+    font-size: 0.9rem;
   }
 
-  .cardmovie-horizontal-main .overview,
-  .cardmovie-horizontal-main .date,
-  .cardmovie-horizontal-main .float i,
   .cardmovie-horizontal-main .float div {
+    font-size: 0.9rem;
+  }
+
+  .cardmovie-horizontal-main .title {
+    font-size: 1rem;
+  }
+
+  .cardmovie-horizontal-main .date,
+  .cardmovie-horizontal-main .overview {
     font-size: 0.9rem;
   }
 }
 
-@media screen and (max-width: 576px) {
-  .cardmovie-horizontal-main .title {
-    font-size: 1rem;
+@media screen and (max-width: 400px) {
+  .cardmovie-horizontal-main .float {
+    background-color: rgba(245, 245, 245, 0.75);
+    margin-right: 0;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+
+  .cardmovie-horizontal-main .float i {
+    font-size: 0.8rem;
+  }
+
+  .cardmovie-horizontal-main .float div {
+    font-size: 0.8rem;
   }
 
   .cardmovie-horizontal-main .content {
@@ -119,42 +138,10 @@
     min-width: 100px;
   }
 
-  .cardmovie-horizontal-main .info {
-    padding: 4px 12px;
-  }
-
-  .cardmovie-horizontal-main .float {
-    position: absolute;
-    top: 5px;
-    left: 5px;
-  }
-
-  .cardmovie-horizontal-main .float i,
-  .cardmovie-horizontal-main .float div {
-    font-size: 0.8rem;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .cardmovie-horizontal-main .title {
-    font-size: 0.9rem;
-  }
-
-  .cardmovie-horizontal-main .overview,
   .cardmovie-horizontal-main .date,
-  .cardmovie-horizontal-main .float i,
-  .cardmovie-horizontal-main .float div {
+  .cardmovie-horizontal-main .overview {
     font-size: 0.8rem;
-  }
-
-  .cardmovie-horizontal-main .content {
-    height: 120px;
-  }
-
-  .cardmovie-horizontal-main .poster {
-    width: 80px;
-    height: 120px;
-    min-width: 80px;
+    margin-top: 5px;
   }
 
   .cardmovie-horizontal-main .overview {
@@ -165,11 +152,9 @@
     -webkit-line-clamp: 3;
     line-clamp: 3;
     -webkit-box-orient: vertical;
-
-    margin-top: 5px;
   }
 
-  .cardmovie-horizontal-main .date {
-    margin-top: 5px;
+  .cardmovie-horizontal-main .info {
+    padding: 0 10px;
   }
 }

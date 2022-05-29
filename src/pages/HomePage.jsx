@@ -2,7 +2,6 @@ import axios from "axios";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import MovieBar from "../components/MovieBar";
-import ImageCarousel from "../components/ImgCarousel";
 import { API_KEY, LANGUAGE, PREFIX, REGION } from "../data/configData";
 
 class HomePage extends Component {
@@ -11,9 +10,9 @@ class HomePage extends Component {
 
     return (
       <div className="homepage-main">
-        <ImageCarousel movieList={moviePopular} />
-        <MovieBar movieList={movieNowPlaying} title="MOVIES NOW PLAYING" numPages={numPages1} />
-        <MovieBar movieList={moviePopular} title="POPULAR MOVIES" numPages={numPages2} />
+        {/* <ImageCarousel movieList={moviePopular} /> */}
+        <MovieBar movieList={movieNowPlaying} title="MOVIES NOW PLAYING" numPages={numPages1} history={this.props.history} />
+        <MovieBar movieList={moviePopular} title="POPULAR MOVIES" numPages={numPages2} history={this.props.history} />
       </div>
     );
   }
