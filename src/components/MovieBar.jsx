@@ -36,7 +36,7 @@ export default class MovieBar extends Component {
         </div>
         <div className="moviebar-list">
           {movieList.map((movie, index) => (
-            <CardMovie movie={movie} key={index} />
+            <CardMovie movie={movie} key={index} history={this.props.history} />
           ))}
         </div>
       </div>

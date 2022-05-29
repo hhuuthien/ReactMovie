@@ -1,7 +1,7 @@
 // format 66 mins thành 1h 6m
 
 export const formatRuntime = (runtime) => {
-  if (!runtime) return "Undefined";
+  if (!runtime) return "No information";
 
   let hour = 0;
   let minute = 0;

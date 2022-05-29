@@ -9,6 +9,8 @@ const defaultState = {
   movieTopRated_totalPages: 0,
   //
   movieLoadMorePages: [],
+  //
+  movieInDetail: {},
 };
 
 export const movieReducer = (state = defaultState, action) => {
@@ -30,6 +32,13 @@ export const movieReducer = (state = defaultState, action) => {
       return {
         ...state,
         movieLoadMorePages: action.data.results,
+      };
+    }
+
+    case "LOAD_MOVIE_DETAIL": {
+      return {
+        ...state,
+        movieInDetail: action.data,
       };
     }
     default: {

@@ -11,7 +11,7 @@ class CardMovieHorizontal extends Component {
       <div className="cardmovie-horizontal-main">
         <div className="content">
           <div className="poster">
-            <CustomImage prefix={IMG_500_PREFIX} sublink={movie.poster_path} placeholderSrc="./img/placeholder.png" />
+            <CustomImage prefix={IMG_500_PREFIX} sublink={movie.poster_path} placeholderSrc="/img/placeholder.png" />
           </div>
           <div className="info">
             <div className="float-and-title">

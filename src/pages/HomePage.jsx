@@ -10,11 +10,13 @@ class HomePage extends Component {
 
     return (
       <div className="homepage-main">
-        {/* <ImageCarousel movieList={moviePopular} /> */}
-        <MovieBar movieList={movieNowPlaying} title="MOVIES NOW PLAYING" numPages={numPages1} history={this.props.history} />
-        <MovieBar movieList={moviePopular} title="POPULAR MOVIES" numPages={numPages2} history={this.props.history} />
-        <MovieBar movieList={movieUpComing} title="COMING SOON" numPages={numPages3} history={this.props.history} />
-        <MovieBar movieList={movieTopRated} title="TOP RATED MOVIES" numPages={numPages4} history={this.props.history} />
+        <div className="container">
+          {/* <ImageCarousel movieList={moviePopular} /> */}
+          <MovieBar movieList={movieNowPlaying} title="MOVIES NOW PLAYING" numPages={numPages1} history={this.props.history} />
+          <MovieBar movieList={moviePopular} title="POPULAR MOVIES" numPages={numPages2} history={this.props.history} />
+          <MovieBar movieList={movieUpComing} title="COMING SOON" numPages={numPages3} history={this.props.history} />
+          <MovieBar movieList={movieTopRated} title="TOP RATED MOVIES" numPages={numPages4} history={this.props.history} />
+        </div>
       </div>
     );
   }

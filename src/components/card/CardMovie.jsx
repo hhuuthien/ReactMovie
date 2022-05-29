@@ -6,10 +6,15 @@ class CardMovie extends Component {
   render() {
     const { movie } = this.props;
     return (
-      <div className="cardmovie-main">
+      <div
+        className="cardmovie-main"
+        onClick={() => {
+          this.props.history.push("/movie/" + movie.id);
+        }}
+      >
         <div className="content">
           <div className="poster">
-            <CustomImage prefix={IMG_500_PREFIX} sublink={movie.poster_path} placeholderSrc="./img/placeholder.png" />
+            <CustomImage prefix={IMG_500_PREFIX} sublink={movie.poster_path} placeholderSrc="/img/placeholder.png" />
           </div>
           <div className="title">{movie.title || ""}</div>
           {movie.vote_count !== 0 ? (
