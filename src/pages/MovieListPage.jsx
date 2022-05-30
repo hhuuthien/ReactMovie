@@ -78,8 +78,8 @@ class MovieListPage extends Component {
           </div>
           <div className="movie-list">
             {this.state.isShowPage1
-              ? movieList.map((movie, index) => <CardMovieHorizontal movie={movie} key={index} />)
-              : movieLoadMorePages.map((movie, index) => <CardMovieHorizontal movie={movie} key={index} />)}
+              ? movieList.map((movie, index) => <CardMovieHorizontal movie={movie} key={index} history={this.props.history} />)
+              : movieLoadMorePages.map((movie, index) => <CardMovieHorizontal movie={movie} key={index} history={this.props.history} />)}
           </div>
         </div>
       </div>
@@ -87,7 +87,7 @@ class MovieListPage extends Component {
   }
 
   componentDidMount() {
-    document.getElementById("movielistpage-main").scrollIntoView({
+    document.getElementById("movielistpage-main")?.scrollIntoView({
       behavior: "smooth",
     });
   }

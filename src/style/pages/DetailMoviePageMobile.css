@@ -1,0 +1,105 @@
+.dmp-mobile-main {
+}
+
+.dmp-mobile-main .section1 {
+  position: relative;
+}
+
+.dmp-mobile-main .section1 .backdrop {
+  width: 100%;
+  height: 300px;
+}
+
+.dmp-mobile-main .section1 .backdrop > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+.dmp-mobile-main .section1 .overlay {
+  width: 100%;
+  height: 300px;
+  background-color: rgba(255, 255, 255, 0.2);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.dmp-mobile-main .section1 .poster-title {
+  position: absolute;
+  top: 100px;
+  left: 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  width: calc(100vw - 100px);
+}
+
+.dmp-mobile-main .section1 .poster {
+  width: 200px;
+  height: 300px;
+  min-width: 200px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.dmp-mobile-main .section1 .poster > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+.dmp-mobile-main .section1 .title {
+  width: 100%;
+  font-weight: bold;
+  font-size: 1.8rem;
+  line-height: 1.4;
+  margin-left: 15px;
+}
+
+.dmp-mobile-main .section1 .info {
+  margin-top: 120px;
+  padding: 0 50px;
+}
+
+.dmp-mobile-main .section1 .info i {
+  font-family: Icons !important;
+}
+
+.dmp-mobile-main .section1 .info .star {
+  margin-top: 10px;
+  font-size: 1.1rem;
+}
+
+.dmp-mobile-main .section1 .info .star i {
+  color: #feb139;
+  font-size: 1.5rem;
+}
+
+.dmp-mobile-main .section1 .info .date_runtime {
+  margin-top: 10px;
+}
+
+.dmp-mobile-main .section1 .info .genres {
+  margin-top: 10px;
+}
+
+.dmp-mobile-main .section1 .info .user-action {
+  margin-top: 20px;
+}
+
+.dmp-mobile-main .section1 .info .tagline {
+  margin-top: 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+.dmp-mobile-main .section1 .info .overview {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}

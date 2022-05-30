@@ -75,7 +75,8 @@ class DetailMoviePage extends Component {
 
               <div className="star">
                 <Icon name="star" />
-                {movie.vote_average || "No information"} {`(${movie.vote_count} votes)` || ""}
+                {movie.vote_average || "No information"}
+                {movie.vote_count ? `(${movie.vote_count} votes)` : ""}
               </div>
               <div className="date_runtime">
                 <Popup
