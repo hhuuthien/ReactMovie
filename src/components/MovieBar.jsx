@@ -11,7 +11,6 @@ export default class MovieBar extends Component {
         <div className="moviebar-title">
           <Header as="h3">{title}</Header>
           <Button
-            inverted
             color="blue"
             content="See more"
             onClick={() => {

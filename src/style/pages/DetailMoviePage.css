@@ -34,18 +34,28 @@
 }
 
 .dmp-main .section1 .info .tagline {
-  margin-top: 10px;
+  margin-top: 30px;
   font-size: 1.2rem;
   font-weight: bold;
   line-height: 1.5;
 }
 
-.dmp-main .section1 .info .date_runtime_genres {
+.dmp-main .section1 .info .overview {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.dmp-main .section1 .info .date_runtime {
   margin-top: 10px;
 }
 
-.dmp-main .section1 .info .date_runtime_genres i {
+.dmp-main .section1 .info .date_runtime i {
   font-family: Icons !important;
+}
+
+.dmp-main .section1 .info .genres {
+  margin-top: 10px;
 }
 
 .dmp-main .section1 .info .star {
@@ -84,4 +94,12 @@
   height: calc(100vh - 60px);
   z-index: -1;
   background-color: rgba(255, 255, 255, 0.9);
+}
+
+.dmp-main .section1 .info .user-action {
+  margin-top: 30px;
+}
+
+.dmp-main .section1 .info .user-action i {
+  font-family: Icons !important;
 }
