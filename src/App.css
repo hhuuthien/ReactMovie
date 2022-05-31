@@ -59,10 +59,11 @@
 @import "./style/ImgCarousel.css";
 @import "./style/MovieBar.css";
 @import "./style/DetailMovieCast.css";
+@import "./style/DetailMovieCrew.css";
 
 @import "./style/card/CardMovie.css";
 @import "./style/card/CardMovieHorizontal.css";
-@import "./style/card/CardCast.css";
+@import "./style/card/CardCastCrew.css";
 
 @import "./style/pages/HomePage.css";
 @import "./style/pages/MovieListPage.css";

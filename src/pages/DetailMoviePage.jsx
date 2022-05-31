@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { Button, Icon, Label, Modal, Popup } from "semantic-ui-react";
 import CustomImage from "../components/CustomImage";
 import DetailMovieCast from "../components/DetailMovieCast";
+import DetailMovieCrew from "../components/DetailMovieCrew";
 import { API_KEY, IMG_PREFIX, LANGUAGE, PREFIX } from "../data/configData";
 import { formatDate } from "../function/formatDate";
 import { formatRuntime } from "../function/formatRuntime";
@@ -64,7 +65,6 @@ class DetailMoviePage extends Component {
 
   render() {
     const { movie } = this.props;
-    console.log(movie);
 
     if (!movie.id) return <></>;
 
@@ -159,6 +159,8 @@ class DetailMoviePage extends Component {
           </div>
           <div className="section2">
             <DetailMovieCast cast={movie.credits.cast} />
+            <div style={{ height: 40 }}></div>
+            <DetailMovieCrew crew={movie.credits.crew} />
           </div>
         </div>
       </div>
