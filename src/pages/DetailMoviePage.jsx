@@ -1,12 +1,13 @@
 import axios from "axios";
 import React, { Component } from "react";
+import ReactPlayer from "react-player/youtube";
 import { connect } from "react-redux";
 import { Button, Icon, Label, Modal, Popup } from "semantic-ui-react";
 import CustomImage from "../components/CustomImage";
+import DetailMovieCast from "../components/DetailMovieCast";
 import { API_KEY, IMG_PREFIX, LANGUAGE, PREFIX } from "../data/configData";
 import { formatDate } from "../function/formatDate";
 import { formatRuntime } from "../function/formatRuntime";
-import ReactPlayer from "react-player/youtube";
 
 class DetailMoviePage extends Component {
   state = {
@@ -22,27 +23,35 @@ class DetailMoviePage extends Component {
     }
   }
 
-  renderWebsiteButton(homepage) {
+  renderWebsiteButton(homepage, size) {
     if (!homepage || homepage === null || homepage === "") {
       return (
-        <Button icon disabled>
+        <Button size={size} icon disabled>
           <Icon name="world" />
         </Button>
       );
     }
 
     return (
-      <Button icon onClick={() => this.goToWebsite(homepage)}>
+      <Button icon size={size} onClick={() => this.goToWebsite(homepage)}>
         <Icon name="world" />
       </Button>
     );
   }
 
-  renderIMDBButton(id) {
+  renderIMDBButton(id, size) {
     if (!id || id === null || id === "") {
-      return <Button disabled>See it on IMDB</Button>;
+      return (
+        <Button size={size} disabled>
+          IMDB
+        </Button>
+      );
     }
-    return <Button onClick={() => this.goToIMDB(id)}>See it on IMDB</Button>;
+    return (
+      <Button size={size} onClick={() => this.goToIMDB(id)}>
+        IMDB
+      </Button>
+    );
   }
 
   goToWebsite(homepage) {
@@ -58,6 +67,9 @@ class DetailMoviePage extends Component {
     console.log(movie);
 
     if (!movie.id) return <></>;
+
+    const size = window.innerWidth >= 768 ? "large" : "medium";
+    const buttonSize = window.innerWidth >= 768 ? "medium" : "small";
 
     return (
       <div className="dmp-main">
@@ -81,7 +93,7 @@ class DetailMoviePage extends Component {
               <div className="date_runtime">
                 <Popup
                   trigger={
-                    <Label size={"large"} color={"blue"}>
+                    <Label size={size} color={"blue"}>
                       <Icon name="calendar" />
                       {formatDate(movie.release_date)}
                     </Label>
@@ -92,7 +104,7 @@ class DetailMoviePage extends Component {
                 />
                 <Popup
                   trigger={
-                    <Label size={"large"} color={"blue"}>
+                    <Label size={size} color={"blue"}>
                       <Icon name="time" />
                       {formatRuntime(movie.runtime)}
                     </Label>
@@ -105,15 +117,15 @@ class DetailMoviePage extends Component {
               <div className="genres">
                 {movie.genres.map((g, i) => {
                   return (
-                    <Label size={"large"} color={"blue"} key={i}>
+                    <Label size={size} color={"blue"} key={i}>
                       {g.name}
                     </Label>
                   );
                 })}
               </div>
               <div className="user-action">
-                {this.renderWebsiteButton(movie.homepage)}
-                {this.renderIMDBButton(movie.imdb_id)}
+                {this.renderWebsiteButton(movie.homepage, buttonSize)}
+                {this.renderIMDBButton(movie.imdb_id, buttonSize)}
 
                 <Modal
                   dimmer={"blurring"}
@@ -130,28 +142,32 @@ class DetailMoviePage extends Component {
                   }
                   open={this.state.isShowModal}
                   size="small"
-                  trigger={<Button color="red">Watch trailer</Button>}
+                  trigger={
+                    <Button size={buttonSize} color="red">
+                      Watch trailer
+                    </Button>
+                  }
                 >
-                  <Modal.Content>
-                    <ReactPlayer url={this.getTrailerLink(movie.videos.results)} playing={true} controls={true} />
-                  </Modal.Content>
+                  <div className="player-wrapper">
+                    <ReactPlayer className="react-player" url={this.getTrailerLink(movie.videos.results)} playing={true} controls={true} width="100%" height="100%" />
+                  </div>
                 </Modal>
               </div>
               <div className="tagline">{movie.tagline || ""}</div>
               <div className="overview">{movie.overview || ""}</div>
             </div>
           </div>
-          <div className="section2"></div>
+          <div className="section2">
+            <DetailMovieCast />
+          </div>
         </div>
       </div>
     );
   }
 
-  //homepage, trailer, imdb
-
   callAPI = async (movieID) => {
     try {
-      const url = `${PREFIX}/movie/${movieID}?api_key=${API_KEY}&language=${LANGUAGE}&append_to_response=videos`;
+      const url = `${PREFIX}/movie/${movieID}?api_key=${API_KEY}&language=${LANGUAGE}&append_to_response=videos, credits`;
       const response = await axios.get(url);
 
       this.props.dispatch({

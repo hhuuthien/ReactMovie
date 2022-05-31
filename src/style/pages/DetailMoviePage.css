@@ -4,7 +4,7 @@
 
 .dmp-main .section1 {
   display: flex;
-  padding-top: calc((100vh - 660px) / 2);
+  padding-top: 50px;
 }
 
 .dmp-main .section1 .poster {
@@ -58,6 +58,11 @@
   margin-top: 10px;
 }
 
+.dmp-main .section1 .info .genres div.ui.label {
+  margin-right: 4px;
+  margin-bottom: 4px;
+}
+
 .dmp-main .section1 .info .star {
   margin-top: 10px;
   font-size: 1.1rem;
@@ -70,11 +75,11 @@
 }
 
 .dmp-main .backdrop {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
-  height: calc(100vh - 60px);
+  height: 100vh;
   z-index: -2;
 }
 
@@ -87,11 +92,11 @@
 }
 
 .dmp-main .overlay {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
-  height: calc(100vh - 60px);
+  height: 100vh;
   z-index: -1;
   background-color: rgba(255, 255, 255, 0.9);
 }
@@ -102,4 +107,109 @@
 
 .dmp-main .section1 .info .user-action i {
   font-family: Icons !important;
+}
+
+.dmp-main .section1 .info .user-action button {
+  margin-right: 4px;
+  margin-bottom: 4px;
+}
+
+.player-wrapper {
+  position: relative;
+  padding-top: 56.25%;
+}
+
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@media screen and (max-width: 992px) {
+  .dmp-main .section1 {
+    padding-top: 15px;
+  }
+
+  .dmp-main .section1 .poster {
+    width: 350px;
+    min-width: 350px;
+    height: 525px;
+  }
+
+  .dmp-main .section1 .info {
+    padding: 10px 20px;
+  }
+
+  .dmp-main .section1 .info .title {
+    font-size: 2rem;
+  }
+
+  .dmp-main .section1 .info .tagline {
+    font-size: 1rem;
+  }
+
+  .dmp-main .section1 .info .overview {
+    font-size: 1rem;
+  }
+
+  .dmp-main .section1 .info .star {
+    font-size: 1rem;
+  }
+
+  .dmp-main .section1 .info .star i {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .dmp-main .section1 .poster {
+    width: 270px;
+    min-width: 270px;
+    height: 405px;
+  }
+
+  .dmp-main .section1 .info {
+    padding: 0 15px;
+  }
+
+  .dmp-main .section1 .info .title {
+    font-size: 1.5rem;
+  }
+
+  .dmp-main .section1 .info .star {
+    margin-top: 5px;
+  }
+
+  .dmp-main .section1 .info .user-action {
+    margin-top: 25px;
+  }
+
+  .dmp-main .section1 .info .tagline {
+    margin-top: 25px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .dmp-main .section1 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dmp-main .section1 .poster {
+    width: 180px;
+    min-width: 180px;
+    height: 270px;
+  }
+
+  .dmp-main .section1 .info {
+    padding: 20px 0;
+  }
+
+  .dmp-main .section1 .info .title,
+  .dmp-main .section1 .info .star,
+  .dmp-main .section1 .info .date_runtime,
+  .dmp-main .section1 .info .genres,
+  .dmp-main .section1 .info .user-action {
+    text-align: center;
+  }
 }
