@@ -110,7 +110,8 @@
 }
 
 .dmp-main .section1 .info .user-action i {
-  font-family: Icons !important;
+  font-family: "Font Awesome 6 Free" !important;
+  margin-right: 8px;
 }
 
 .dmp-main .section1 .info .user-action button {

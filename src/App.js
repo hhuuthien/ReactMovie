@@ -9,7 +9,6 @@ function App() {
   return (
     <BrowserRouter>
       <div className="app">
-        {/* <div className="app-background"></div> */}
         <Navbar />
         <Switch>
           <Route exact path="/home" component={HomePage} />

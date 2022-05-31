@@ -9,19 +9,6 @@
   position: relative;
 }
 
-.app-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-image: url("./assets/svg/layered-waves-haikei.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: bottom;
-  z-index: -1;
-}
-
 .container {
   width: 100%;
   max-width: 1200px;

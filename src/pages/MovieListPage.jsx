@@ -68,7 +68,7 @@ class MovieListPage extends Component {
     }
 
     return (
-      <div className="movielistpage-main" id="movielistpage-main">
+      <div className="movielistpage-main">
         <div className="container">
           <div className="movie-title">
             <h3>{title}</h3>
@@ -87,9 +87,7 @@ class MovieListPage extends Component {
   }
 
   componentDidMount() {
-    document.getElementById("movielistpage-main")?.scrollIntoView({
-      behavior: "smooth",
-    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 }
 

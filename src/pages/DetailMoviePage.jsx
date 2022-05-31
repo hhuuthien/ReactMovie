@@ -24,44 +24,44 @@ class DetailMoviePage extends Component {
     }
   }
 
-  renderWebsiteButton(homepage, size) {
-    if (!homepage || homepage === null || homepage === "") {
-      return (
-        <Button size={size} icon disabled>
-          <Icon name="world" />
-        </Button>
-      );
-    }
+  // renderWebsiteButton(homepage, size) {
+  //   if (!homepage || homepage === null || homepage === "") {
+  //     return (
+  //       <Button size={size} icon disabled>
+  //         <Icon name="world" />
+  //       </Button>
+  //     );
+  //   }
 
-    return (
-      <Button icon size={size} onClick={() => this.goToWebsite(homepage)}>
-        <Icon name="world" />
-      </Button>
-    );
-  }
+  //   return (
+  //     <Button icon size={size} onClick={() => this.goToWebsite(homepage)}>
+  //       <Icon name="world" />
+  //     </Button>
+  //   );
+  // }
 
-  renderIMDBButton(id, size) {
-    if (!id || id === null || id === "") {
-      return (
-        <Button size={size} disabled>
-          IMDB
-        </Button>
-      );
-    }
-    return (
-      <Button size={size} onClick={() => this.goToIMDB(id)}>
-        IMDB
-      </Button>
-    );
-  }
+  // renderIMDBButton(id, size) {
+  //   if (!id || id === null || id === "") {
+  //     return (
+  //       <Button size={size} disabled>
+  //         IMDB
+  //       </Button>
+  //     );
+  //   }
+  //   return (
+  //     <Button size={size} onClick={() => this.goToIMDB(id)}>
+  //       IMDB
+  //     </Button>
+  //   );
+  // }
 
-  goToWebsite(homepage) {
-    window.open(homepage);
-  }
+  // goToWebsite(homepage) {
+  //   window.open(homepage);
+  // }
 
-  goToIMDB(id) {
-    window.open("https://www.imdb.com/title/" + id);
-  }
+  // goToIMDB(id) {
+  //   window.open("https://www.imdb.com/title/" + id);
+  // }
 
   render() {
     const { movie } = this.props;
@@ -124,8 +124,8 @@ class DetailMoviePage extends Component {
                 })}
               </div>
               <div className="user-action">
-                {this.renderWebsiteButton(movie.homepage, buttonSize)}
-                {this.renderIMDBButton(movie.imdb_id, buttonSize)}
+                {/* {this.renderWebsiteButton(movie.homepage, buttonSize)}
+                {this.renderIMDBButton(movie.imdb_id, buttonSize)} */}
 
                 <Modal
                   dimmer={"blurring"}
@@ -144,6 +144,7 @@ class DetailMoviePage extends Component {
                   size="small"
                   trigger={
                     <Button size={buttonSize} color="red">
+                      <i className="fa-solid fa-circle-play"></i>
                       Watch trailer
                     </Button>
                   }

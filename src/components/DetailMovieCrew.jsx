@@ -10,7 +10,9 @@ export default class DetailMovieCrew extends Component {
   render() {
     const { crew } = this.props;
 
-    const crewToRender = crew.filter((c) => c.job === "Director" || c.job === "Writer" || c.job === "Screenplay" || c.job === "Novel" || c.job === "Director of Photography");
+    const director = crew.filter((c) => c.job === "Director");
+    const otherCrews = crew.filter((c) => c.job === "Writer" || c.job === "Screenplay" || c.job === "Novel" || c.job === "Director of Photography");
+    const crewToRender = [...director, ...otherCrews];
 
     return (
       <div className="dmcrew-main">
