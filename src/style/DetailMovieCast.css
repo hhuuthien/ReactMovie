@@ -1,0 +1,16 @@
+.dmcast-main .title {
+  margin-bottom: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dmcast-main .title h3 {
+  color: #143f6b !important;
+  margin: 0 !important;
+}
+
+.dmcast-main .title button {
+  margin: 0 !important;
+  padding: 8px 16px !important;
+}

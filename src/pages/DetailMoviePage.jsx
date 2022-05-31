@@ -158,7 +158,7 @@ class DetailMoviePage extends Component {
             </div>
           </div>
           <div className="section2">
-            <DetailMovieCast />
+            <DetailMovieCast cast={movie.credits.cast} />
           </div>
         </div>
       </div>
@@ -167,7 +167,7 @@ class DetailMoviePage extends Component {
 
   callAPI = async (movieID) => {
     try {
-      const url = `${PREFIX}/movie/${movieID}?api_key=${API_KEY}&language=${LANGUAGE}&append_to_response=videos, credits`;
+      const url = `${PREFIX}/movie/${movieID}?api_key=${API_KEY}&language=${LANGUAGE}&append_to_response=videos,credits`;
       const response = await axios.get(url);
 
       this.props.dispatch({
