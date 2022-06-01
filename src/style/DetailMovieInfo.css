@@ -1,0 +1,54 @@
+.dminfo-main .title {
+  margin-bottom: 14px;
+}
+
+.dminfo-main .title h3 {
+  color: #143f6b !important;
+  margin: 0 !important;
+}
+
+.dminfo-main .content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.dminfo-main .content .i-group {
+  display: flex;
+  color: black !important;
+}
+
+.dminfo-main .content .i-title {
+  width: 200px;
+  min-width: 200px;
+  font-weight: bold;
+}
+
+.dminfo-main .content .i-info a {
+  display: inline-block;
+  cursor: pointer;
+  color: black !important;
+}
+
+.dminfo-main .content .i-info a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 992px) {
+  .dminfo-main .content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .dminfo-main .content .i-group {
+    display: block;
+  }
+
+  .dminfo-main .content .i-title {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+}

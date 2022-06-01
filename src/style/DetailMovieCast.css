@@ -14,3 +14,14 @@
   margin: 0 !important;
   padding: 8px 16px !important;
 }
+
+/* Modal */
+.dmcast-main-modal .header {
+  color: #143f6b !important;
+}
+
+@media screen and (max-width: 768px) {
+  .dmcast-main-modal .header {
+    font-size: 1.2rem !important;
+  }
+}

@@ -6,6 +6,7 @@ import { Button, Icon, Label, Modal, Popup } from "semantic-ui-react";
 import CustomImage from "../components/CustomImage";
 import DetailMovieCast from "../components/DetailMovieCast";
 import DetailMovieCrew from "../components/DetailMovieCrew";
+import DetailMovieInfo from "../components/DetailMovieInfo";
 import { API_KEY, IMG_PREFIX, LANGUAGE, PREFIX } from "../data/configData";
 import { formatDate } from "../function/formatDate";
 import { formatRuntime } from "../function/formatRuntime";
@@ -65,6 +66,7 @@ class DetailMoviePage extends Component {
 
   render() {
     const { movie } = this.props;
+    console.log(movie);
 
     if (!movie.id) return <></>;
 
@@ -159,9 +161,11 @@ class DetailMoviePage extends Component {
             </div>
           </div>
           <div className="section2">
-            <DetailMovieCast cast={movie.credits.cast} />
+            <DetailMovieCast cast={movie.credits.cast} title={movie.title} />
             <div style={{ height: 40 }}></div>
-            <DetailMovieCrew crew={movie.credits.crew} />
+            <DetailMovieCrew crew={movie.credits.crew} title={movie.title} />
+            <div style={{ height: 40 }}></div>
+            <DetailMovieInfo movie={movie} />
           </div>
         </div>
       </div>

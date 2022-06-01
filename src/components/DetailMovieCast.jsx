@@ -8,7 +8,7 @@ export default class DetailMovieCast extends Component {
   };
 
   render() {
-    const { cast } = this.props;
+    const { cast, title } = this.props;
     const castToRender = cast.slice(0, 5);
     return (
       <div className="dmcast-main">
@@ -16,12 +16,14 @@ export default class DetailMovieCast extends Component {
           <Header as="h3">CASTS</Header>
 
           <Modal
+            className="dmcast-main-modal"
             dimmer={"blurring"}
             onClose={() => this.setState({ isModal: false })}
             onOpen={() => this.setState({ isModal: true })}
             open={this.state.isModal}
             trigger={<Button color="blue" content="See all casts" />}
           >
+            <Modal.Header>{title} / Casts</Modal.Header>
             <Modal.Content scrolling>
               <div>
                 {cast.map((c, i) => (

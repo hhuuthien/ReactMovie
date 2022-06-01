@@ -8,7 +8,7 @@ export default class DetailMovieCrew extends Component {
   };
 
   render() {
-    const { crew } = this.props;
+    const { crew, title } = this.props;
 
     const director = crew.filter((c) => c.job === "Director");
     const otherCrews = crew.filter((c) => c.job === "Writer" || c.job === "Screenplay" || c.job === "Novel" || c.job === "Director of Photography");
@@ -20,12 +20,14 @@ export default class DetailMovieCrew extends Component {
           <Header as="h3">CREWS</Header>
 
           <Modal
+            className="dmcrew-main-modal"
             dimmer={"blurring"}
             onClose={() => this.setState({ isModal: false })}
             onOpen={() => this.setState({ isModal: true })}
             open={this.state.isModal}
             trigger={<Button color="blue" content="See all crews" />}
           >
+            <Modal.Header>{title} / Crews</Modal.Header>
             <Modal.Content scrolling>
               <div>
                 {crew.map((c, i) => (
