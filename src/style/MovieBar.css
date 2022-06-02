@@ -48,25 +48,3 @@
 .moviebar-main:hover .moviebar-list::-webkit-scrollbar-thumb {
   background: rgb(20, 63, 107);
 }
-
-/* Phần dưới của modal */
-
-.actions .modal-action {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.actions .modal-action button {
-  margin: 0 !important;
-}
-
-@media screen and (max-width: 768px) {
-  .ui.modal h3.ui.header {
-    font-size: 1rem !important;
-  }
-
-  .ui.modal .actions {
-    padding: 14px !important;
-  }
-}

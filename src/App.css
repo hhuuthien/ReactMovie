@@ -48,6 +48,7 @@
 @import "./style/DetailMovieCast.css";
 @import "./style/DetailMovieCrew.css";
 @import "./style/DetailMovieInfo.css";
+@import "./style/DetailMovieImage.css";
 
 @import "./style/card/CardMovie.css";
 @import "./style/card/CardMovieHorizontal.css";

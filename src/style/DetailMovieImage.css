@@ -1,0 +1,73 @@
+.dmimage-main .title {
+  margin-bottom: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dmimage-main .title h3 {
+  color: #143f6b !important;
+  margin: 0 !important;
+}
+
+.dmimage-main .title button {
+  margin: 0 !important;
+  padding: 8px 16px !important;
+}
+
+.dmimage-main .dmimage-main-list {
+  display: flex;
+  max-width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.dmimage-main .dmimage-main-list .img-container {
+  width: 120px;
+  min-width: 120px;
+  height: 180px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.dmimage-main .dmimage-main-list .img-container:last-child {
+  margin-right: 0;
+}
+
+.dmimage-main .dmimage-main-list .img-container:hover > img {
+  transform: scale(0.95);
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.dmimage-main .dmimage-main-list .img-container > img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transition: all 0.3s ease;
+}
+
+/* Custom scrollbar of .dmimage-main-list */
+.dmimage-main-list::-webkit-scrollbar {
+  height: 10px;
+}
+
+.dmimage-main-list::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: rgba(235, 235, 235, 0);
+}
+
+.dmimage-main-list::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgba(20, 63, 107, 0);
+}
+
+.dmimage-main:hover .dmimage-main-list::-webkit-scrollbar-track {
+  background-color: rgba(235, 235, 235, 0.3);
+}
+
+.dmimage-main:hover .dmimage-main-list::-webkit-scrollbar-thumb {
+  background: rgb(20, 63, 107);
+}

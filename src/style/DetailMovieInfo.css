@@ -25,7 +25,7 @@
 }
 
 .dminfo-main .content .i-info a {
-  display: inline-block;
+  display: block;
   cursor: pointer;
   color: black !important;
 }

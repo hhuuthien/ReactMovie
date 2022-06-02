@@ -9,6 +9,7 @@
     "3d-react-carousal": "^5.0.0",
     "animate.css": "^4.1.1",
     "axios": "^0.27.2",
+    "framer-motion": "^6.3.6",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-img-placeholder": "^0.1.5",

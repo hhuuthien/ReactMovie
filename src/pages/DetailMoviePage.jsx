@@ -7,6 +7,7 @@ import CustomImage from "../components/CustomImage";
 import DetailMovieCast from "../components/DetailMovieCast";
 import DetailMovieCrew from "../components/DetailMovieCrew";
 import DetailMovieInfo from "../components/DetailMovieInfo";
+import DetailMovieImage from "../components/DetailMovieImage";
 import { API_KEY, IMG_PREFIX, LANGUAGE, PREFIX } from "../data/configData";
 import { formatDate } from "../function/formatDate";
 import { formatRuntime } from "../function/formatRuntime";
@@ -25,50 +26,10 @@ class DetailMoviePage extends Component {
     }
   }
 
-  // renderWebsiteButton(homepage, size) {
-  //   if (!homepage || homepage === null || homepage === "") {
-  //     return (
-  //       <Button size={size} icon disabled>
-  //         <Icon name="world" />
-  //       </Button>
-  //     );
-  //   }
-
-  //   return (
-  //     <Button icon size={size} onClick={() => this.goToWebsite(homepage)}>
-  //       <Icon name="world" />
-  //     </Button>
-  //   );
-  // }
-
-  // renderIMDBButton(id, size) {
-  //   if (!id || id === null || id === "") {
-  //     return (
-  //       <Button size={size} disabled>
-  //         IMDB
-  //       </Button>
-  //     );
-  //   }
-  //   return (
-  //     <Button size={size} onClick={() => this.goToIMDB(id)}>
-  //       IMDB
-  //     </Button>
-  //   );
-  // }
-
-  // goToWebsite(homepage) {
-  //   window.open(homepage);
-  // }
-
-  // goToIMDB(id) {
-  //   window.open("https://www.imdb.com/title/" + id);
-  // }
-
   render() {
-    const { movie } = this.props;
-    console.log(movie);
+    const { movie, image } = this.props;
 
-    if (!movie.id) return <></>;
+    if (!movie.id) return <div></div>;
 
     const size = window.innerWidth >= 768 ? "large" : "medium";
     const buttonSize = window.innerWidth >= 768 ? "medium" : "small";
@@ -126,9 +87,6 @@ class DetailMoviePage extends Component {
                 })}
               </div>
               <div className="user-action">
-                {/* {this.renderWebsiteButton(movie.homepage, buttonSize)}
-                {this.renderIMDBButton(movie.imdb_id, buttonSize)} */}
-
                 <Modal
                   dimmer={"blurring"}
                   basic
@@ -166,6 +124,9 @@ class DetailMoviePage extends Component {
             <DetailMovieCrew crew={movie.credits.crew} title={movie.title} />
             <div style={{ height: 40 }}></div>
             <DetailMovieInfo movie={movie} />
+            <div style={{ height: 40 }}></div>
+            <DetailMovieImage movieImage={image} />
+            <div style={{ height: 40 }}></div>
           </div>
         </div>
       </div>
@@ -174,13 +135,24 @@ class DetailMoviePage extends Component {
 
   callAPI = async (movieID) => {
     try {
-      const url = `${PREFIX}/movie/${movieID}?api_key=${API_KEY}&language=${LANGUAGE}&append_to_response=videos,credits`;
-      const response = await axios.get(url);
+      const url1 = `${PREFIX}/movie/${movieID}?api_key=${API_KEY}&language=${LANGUAGE}&append_to_response=videos,credits`;
+      const one = axios.get(url1);
+      const url2 = `${PREFIX}/movie/${movieID}/images?api_key=${API_KEY}&include_image_language=en`;
+      const two = axios.get(url2);
 
-      this.props.dispatch({
-        type: "LOAD_MOVIE_DETAIL",
-        data: response.data,
-      });
+      await axios
+        .all([one, two])
+        .then(
+          axios.spread((...responses) => {
+            this.props.dispatch({
+              type: "LOAD_MOVIE_DETAIL",
+              response: responses,
+            });
+          })
+        )
+        .catch((error) => {
+          console.error(error);
+        });
     } catch (error) {
       console.error(error);
     }
@@ -189,12 +161,20 @@ class DetailMoviePage extends Component {
   componentDidMount() {
     const { movieID } = this.props.match.params;
     this.callAPI(movieID);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  componentWillUnmount() {
+    this.props.dispatch({
+      type: "CLEAR_DATA_BEFORE_UNMOUNTING",
+    });
   }
 }
 
 const mapStateToProps = (root) => {
   return {
     movie: root.movieReducer.movieInDetail,
+    image: root.movieReducer.movieImage,
   };
 };
 

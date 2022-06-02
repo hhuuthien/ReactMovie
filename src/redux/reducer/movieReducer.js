@@ -11,6 +11,8 @@ const defaultState = {
   movieLoadMorePages: [],
   //
   movieInDetail: {},
+  //
+  movieImage: {},
 };
 
 export const movieReducer = (state = defaultState, action) => {
@@ -34,11 +36,18 @@ export const movieReducer = (state = defaultState, action) => {
         movieLoadMorePages: action.data.results,
       };
     }
-
     case "LOAD_MOVIE_DETAIL": {
       return {
         ...state,
-        movieInDetail: action.data,
+        movieInDetail: action.response[0].data,
+        movieImage: action.response[1].data,
+      };
+    }
+    case "CLEAR_DATA_BEFORE_UNMOUNTING": {
+      return {
+        ...state,
+        movieInDetail: {},
+        movieImage: {},
       };
     }
     default: {
