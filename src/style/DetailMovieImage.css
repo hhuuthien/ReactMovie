@@ -71,3 +71,57 @@
 .dmimage-main:hover .dmimage-main-list::-webkit-scrollbar-thumb {
   background: rgb(20, 63, 107);
 }
+
+/* Modal */
+.dmimage-main-modal img {
+  width: auto;
+  height: 80vh;
+  object-fit: cover;
+  object-position: center;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
+    rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.dmimage-main-modal i {
+  font-family: "Font Awesome 6 Free" !important;
+  font-size: 5rem;
+  color: rgba(245, 245, 245, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dmimage-main-modal i:hover {
+  color: #143f6b;
+}
+
+.dmimage-main-modal .content {
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .dmimage-main-modal img {
+    height: 70vh;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .dmimage-main-modal img {
+    height: 50vh;
+  }
+
+  .dmimage-main-modal i {
+    font-size: 3.5rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .dmimage-main-modal img {
+    height: 40vh;
+  }
+
+  .dmimage-main-modal i {
+    font-size: 3.5rem;
+  }
+}
